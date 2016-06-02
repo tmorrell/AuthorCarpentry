@@ -12,7 +12,7 @@ Welcome to the master repository for [Author Carpentry] (http://libguides.caltec
 
 *But also enable an essential fifth component of knowledge management in the digital age*:
 
-5. Replication, Reuse, and Remixing
+    5\. Replication, Reuse, and Remixing
 
 In conceiving of the Author Carpentry program, our hope is to advance production and curatation of the *Research Paper of the Future*, crafted as a fully open, executable, reproducible, reusable contribution ready to be rendered, tested, mined, adapted, and built upon by humans and machines. 
 
