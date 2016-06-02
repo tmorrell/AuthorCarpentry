@@ -1,6 +1,6 @@
 #Author Carpentry                ![Author Carpentry Logo](AClogo.jpg)
 
-Welcome to the master repository for [Author Carpentry] (http://libguides.caltech.edu/authorcarpentry), a training initiatve  of the Caltech Library to enhance scientific authorship and publishing in the digital age. The aim of Author Carpentry is to promote and support good tools, practices, and skills that help researchers prepare, submit, and publish contributions that add value to the scholarly record and invite others to adapt and build upon. Ideally, that means contributions that fulfill not only the original Big Four of the scientific paper --
+Welcome to the master repository for [Author Carpentry] (http://libguides.caltech.edu/authorcarpentry), a training initiatve  of the Caltech Library to enhance scientific authorship and publishing in the digital age. The aim of Author Carpentry is to promote and support good information handling tools, practices, and skills that help researchers prepare, submit, and publish contributions that add value to the scholarly record and invite others to adapt and build upon. Ideally, that means contributions that fulfill not only the original Big Four of the scientific paper --
 
 1. Registration
 
@@ -10,7 +10,7 @@ Welcome to the master repository for [Author Carpentry] (http://libguides.caltec
 
 4. Preservation
 
-But also enable an essential fifth component of knowledge management in the digital age:
+*But also enable an essential fifth component of knowledge management in the digital age*:
 
 5. Replication, Reuse, and Remixing
 
@@ -20,7 +20,7 @@ Author Carpentry lessons are agnostic to the mode of 'publication', recognizing 
 
 #Connection between Author Carpentry and Software/Data Carpentry
 
-The success of Software and Data Carpentry in teaching scientists good enough skills for effective software and data creation and management has inspired the Caltech Library to recast its Author Academy program in a complementary approach. The Author Carpentry lessons are intended to serve as snap-on modules to enhance an existing SW/D Carpentry workshop. SWC founder Greg Wilson's draft lesson ['Modern Scientific Authoring'] [http://swcarpentry.github.io/modern-scientific-authoring/01-mess.html] speaks to the need for training in this area, and subsequent discussions with members of the Carpentry and Research Data Alliance communities have confirmed strong interest in the lessons being planned for Author Carpentry. 
+The success of Software and Data Carpentry in teaching scientists good enough skills for effective software and data creation and management has inspired the Caltech Library to recast its Author Academy program in a complementary approach. The Author Carpentry lessons are intended to serve as snap-on modules to enhance an existing SW/D Carpentry workshop. SWC founder Greg Wilson's draft lesson [Modern Scientific Authoring] (http://swcarpentry.github.io/modern-scientific-authoring/01-mess.html) speaks to the need for training in research information handling.  Subsequent discussions with members of the Carpentry and Research Data Alliance communities have confirmed strong interest in the lessons being designed for Author Carpentry. 
 
 #Topics covered in Author , Carpentry include
 
