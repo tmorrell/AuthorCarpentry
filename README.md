@@ -22,15 +22,15 @@ Author Carpentry lessons are agnostic to the mode of 'publication', recognizing 
 
 The success of Software and Data Carpentry in teaching scientists good enough skills for effective software and data creation and management has inspired the Caltech Library to recast its Author Academy program in a complementary approach. The Author Carpentry lessons are intended to serve as snap-on modules to enhance an existing SW/D Carpentry workshop. SWC founder Greg Wilson's draft lesson [Modern Scientific Authoring] (http://swcarpentry.github.io/modern-scientific-authoring/01-mess.html) speaks to the need for training in research information handling.  Subsequent discussions with members of the Carpentry and Research Data Alliance communities have confirmed strong interest in the lessons being designed for Author Carpentry. 
 
-#Topics covered in Author , Carpentry include
+#Topics covered in Author Carpentry include
 
-* Scientific authoring in useful, powerful, and open mark-up languages such as LaTeX and Markdown; 
+* Scientific writing in useful, powerful, and open mark-up languages such as LaTeX and Markdown; 
 
-* Managing and formulating references, publication lists, and bibliographies in open formats such as BiBTeX;
+* Formulating and managing references, publication lists, and bibliographies in open formats such as BiBTeX and in open tools such as JabRef;
 
 * Establishing scholarly identity with ORCiD and managing reputation with ORCiD-enabled research information systems (ImpactStory, OpenVIVO) 
 
-* Determining authorship order in, and copyright ownership of, collaborative research projects
+* Determining authorship, contributorship, and copyright ownership in collaborative research projects
 
 * Demonstrating best practices in attribution, acknowledgement, and citation, particularly for non-traditional research outputs (software, datasets)
 
