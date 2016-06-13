@@ -32,6 +32,8 @@ Research librarians have long shared expertise in authoring and publishing with 
 
 * Formulating and managing references, publication lists, and bibliographies in open formats such as BiBTeX and using open source tools such as JabRef;
 
+* Transforming author's textual files (e.g. CV's, web Publications pages) into open plain text formats using command line tools, for reuse in other systems
+
 * Establishing scholarly identity with ORCiD and managing reputation with ORCiD-enabled research information systems (ImpactStory, OpenVIVO) 
 
 * Determining authorship, contributorship, and copyright ownership in collaborative research projects
