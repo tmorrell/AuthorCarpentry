@@ -10,13 +10,15 @@ Table of contents
     + Module 1D. How do I get a Digital Object Identifier (DOI) for my material?
 
 
-## NOTE: how to build a TOC from a markdown file
+## NOTE: how to build list of '##' headers from lesson-01.md
 
-Assuming a '##' is a section heading try something like
+In the example I used grep to find the '##' lines, then sed to clean up some text, and finally loop
+through each line and display the results with a '   + ' prefix.
 
 ```shell
-    grep -E '^##' lesson-01.md | sed -e "s/\*//g" -e "s/##//g" -e "s/^\s|\s$//"\
-    | while read LINE; do 
-    echo "    + $LINE"; 
+    grep -E '^##' lesson-01.md | \
+    sed -e "s/\*//g" -e "s/##//g" -e "s/^\s|\s$//" | \
+    while read LINE; do 
+        echo "    + $LINE"; 
     done
 ```
