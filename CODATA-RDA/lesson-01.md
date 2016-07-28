@@ -29,7 +29,7 @@ _Whose websites did the redirects for each DOI take you to?_**Exercise 1A(2) Res
 **Exercise 1A(3). Determine if a 'DOI-style string' is a valid DOI.**`$ curl -L http://10.5454/JPSv1i220161014`
 
 [_Note: this faux DOI was assigned by an established publisher to detect and block unauthorized access to their system. The controversy surrounding publisher creation of DOI-like strings for business operations was taken up in an interesting posting on the CrossRef blog, [DOI-like strings and fake DOIs](http://blog.crossref.org/2016/06/doi-like-strings-and-fake-dois.html)_].  ---
-##**Module 1B. Anatomy of the DOI System?**
+## **Module 1B. Anatomy of the DOI System?**
 ---
 The [DOI System](https://www.doi.org/) is the overall infrastructure by which Digital Object Identifiers are assigned, registered, resolved, and associated with valuable metadata including citation, availability of full text, funder information,  licensing information, and more. The following components of the DOI System together make it work.
 * [The International DOI Federation (IDF)](http://www.doi.org/doi_handbook/7_IDF.html) is responsible for the overall governance of the system. IDF is a not-for-profit membership organization that oversees the operations of the federation of Registration Agencies which providing Digital Object Identifier (DOI) services and registration. IDF is also the registration authority for the ISO standard (ISO 26324) for the DOI system.
@@ -44,7 +44,7 @@ The [DOI System](https://www.doi.org/) is the overall infrastructure by which Di
 `$ curl http://doi.crossref.org/doiRA/10.5170/CERN-2000-001.101, 10.2307/1578389`
 
 [_Note that this lookup service is provided by one of the DOI Agencies, CrossRef, yet the query also works for DOIs issued by other Agencies!  Each DOI Agency provides various services beyond registering and maintaining DOIs; savvy researchers may wish to check with more than one agency to get relevant information._] **Exercise 1B(3). Retrieve a list of DataCite members****Exercise 1C. Determine what information resource is associated with a given DOI**---
-##**Module 1C. Metadata associated with DOIs**##
+## **Module 1C. Metadata associated with DOIs**##
 ---
 When works are registered with DOI Registration Agencies, the Registrant (publisher, data center, or other information provider) is required to submit metadata about the resource that the DOI links to. Each Registration Agency maintains its own metadata schema and establishes rules for requiring and populating the metadata elements so it is important to check their respective websites for a list of metadata elements used and whether they are mandatory or optional.
 
@@ -62,7 +62,7 @@ _Now use Content Negotation to specify a particular format for the citation._
 
 _Keep this citation for Lesson 2, where we add it to a publications list to include in a new research paper._
 ---
-##**Module 1D. How do I get a Digital Object Identifier (DOI) for my material?**
+## **Module 1D. How do I get a Digital Object Identifier (DOI) for my material?**
 ---
 
 You have two options: 
