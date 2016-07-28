@@ -1,26 +1,18 @@
 
-# how to build this website
 
-We are using an experimental Markdown tool called [shorthand](https://github.com/caltechlibrary/shorthand) to build this website.
-It is simpler than other systems like Jykill and easy to script in Bash.
+# How to build this website
 
-## On a Mac
+These are some instructions and explanations for how to generate [caltechlibrary.github.io/AuthorCarpentry](https://caltechlibrary.github.io/AuthorCarpentry) website.
 
-+ Open the Terminal application
-+ clone this repository
-+ change to the repository folder
-+ "source" the *etc/setup-mac.bash* file
-+ and you're ready to work
+## How it works
 
-These are the command I enter after starting Terminal
+The website is being generated using a tool call [shorthand](https://github.com/caltechlibrary/shorthand). It is a simple text label
+expander that also has a built in Markdown processor (turns your Markdown into HTML). It is very friendly for use in Bash scripts.
+We use Bash scripts (e.g. mk-website.sh) to apply *shorthand* to specific markdown files to render the desired pages.
 
-```
-    git clone git@github.com:caltechlibrary/AuthorCarpentry
-    cd AuthorCarpentry
-    . etc/setup-mac.bash
-```
+## Initial setup
 
-## On Windows
+### On Windows
 
 If you are on a Windows machine running Bash that comes with Git clone this repository
 
@@ -37,7 +29,60 @@ These are the command I'd enter in Bash
     cd AuthorCarpentry
     . etc/setup-windows.bash
 ```
+You should now be able run the *shorthand* command and the *./mk-website.bash* script should work.
 
+### On a Mac
+
++ Open the Terminal application
++ clone this repository
++ change to the repository folder
++ "source" the *etc/setup-macosx.bash* file
++ and you're ready to work
+
+These are the command I enter after starting Terminal
+
+```
+    git clone git@github.com:caltechlibrary/AuthorCarpentry
+    cd AuthorCarpentry
+    . etc/setup-mac.bash
+```
+
+You should now be able run the *shorthand* command and the *./mk-website.bash* script should work.
+
+## Continuing your work
+
+### On Windows
+
+You need to let Bash know where to find *shorthand*. The easiest way is 
+
+1. Start Bash
+2. Change to your repository directory
+3. Source the etc/setup-windows.bash file
+
+Then you're in the repository directory in Bash do
+
+```shell
+    . etc/setup-windows.bash
+```
+
+You should be ready to continue working.
+
+### On a Mac
+
+You need to let Bash know where to find *shorthand*. The easiest way is 
+
+1. Start Terminal 
+2. Change to your repository folder in Terminal 
+    + e.g. `cd Sites/AuthorCarpentry` if that is where you put the repository
+3. Source the etc/setup-windows.bash file
+
+Then you're in the repository folder in Bash do
+
+```shell
+    . etc/setup-windows.bash
+```
+
+You should be ready to continue working.
 
 ## Work flow
 
@@ -47,12 +92,4 @@ These are the command I'd enter in Bash
 3. In the root of your repository directory run `./mk-website.sh` to re-generate all the HTML content from your markdown
 4. Check the HTML versions and see if they are what you like
 5. repeat as needed
-
-## How it works
-
-The website is being generated using a tool call [shorthand](https://github.com/caltechlibrary/shorthand). It is a simple text label
-expander that also has a built in Markdown processor (turns your Markdown into HTML). It is very friendly to being used in Bash.
-We use Bash scripts (e.g. mk-website.sh) to apply *shorthand* to specific markdown files to render the desired pages.
-
-
 
