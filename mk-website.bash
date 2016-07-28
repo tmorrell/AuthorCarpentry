@@ -30,3 +30,5 @@ echo "Checking necessary software is installed"
 softwareCheck
 echo "Generating website with shorthand"
 mkPage nav.md README.md index.html
+echo "Generating CODATA-RDA content"
+mkPage CODATA-RDA/nav.md CODATA-RDA/lesson-01.md CODATA-RDA/index.html
