@@ -14,6 +14,7 @@
 <ul>
 <li><a href="CODATA-RDA/">CODATA-RDA</a></li>
 <li><a href="contributing.html">Contribute</a></li>
+<li><a href="How-to-build-this-website.html">How to build this website</a></li>
 </ul>
 
 </nav>
@@ -21,9 +22,10 @@
 <section>
 <h1>How to build this website</h1>
 
-<p>These are instructions for generate <a href="https://caltechlibrary.github.io/AuthorCarpentry">caltechlibrary.github.io/AuthorCarpentry</a> website.</p>
+<p>These are instructions for generate <a href="https://caltechlibrary.github.io/AuthorCarpentry">caltechlibrary.github.io/AuthorCarpentry</a> website.
+This is includes content in the <a href="CODATA-RDA/">CODATA-RDA</a> folder.</p>
 
-<h2>Do this the first time</h2>
+<h2>One time setup</h2>
 
 <h3>On Windows</h3>
 
@@ -69,9 +71,12 @@
 
 <p>You should now be able run the <em>shorthand</em> command and the <em>./mk-website.bash</em> script should work.</p>
 
-<h2>Do this for ongoing work</h2>
+<hr />
 
-<p>Once you have your repositories cloned on going authoring is a little easier.</p>
+<h2>On going work</h2>
+
+<p>Once you have your repositories cloned on going authoring is a little easier. When you start
+your Bash session you source the appropriate setup file and then you can get to work.</p>
 
 <h3>Windows workflow</h3>
 
@@ -85,7 +90,8 @@
 
 <p>Then you&rsquo;re in the repository directory in Bash do</p>
 
-<pre><code class="language-shell">    . etc/setup-windows.bash
+<pre><code class="language-shell">    cd AuthorCarpentry
+    . etc/setup-windows.bash
 </code></pre>
 
 <p>You should be ready to continue working.</p>
@@ -106,30 +112,50 @@
 
 <p>Then you&rsquo;re in the repository folder in Bash do</p>
 
-<pre><code class="language-shell">    . etc/setup-windows.bash
+<pre><code class="language-shell">    cd AuthorCarpentry
+    . etc/setup-macosx.bash
 </code></pre>
 
 <p>You should be ready to continue working.</p>
 
-<h2>Work flow</h2>
+<hr />
+
+<h2>Workflow</h2>
 
 <ol>
-<li>Write/edit your content in Markdown files</li>
+<li>Source your setup file (only do this once) to setup your Bash environment</li>
+<li>Create, write and edit your content in Markdown files</li>
 <li>For each level of the website you can customize the navigation links in <em>nav.md</em> as need
 
 <ul>
-<li>e.g. add additiona links to pages or lessons</li>
+<li>e.g. add additional links to pages or lessons</li>
 </ul></li>
 <li>In the root of your repository directory run <code>./mk-website.sh</code> to re-generate all the HTML content from your markdown</li>
-<li>Check the HTML versions and see if they are what you like</li>
-<li>repeat as needed</li>
+<li>Check the HTML versions and see if they are what you like
+
+<ul>
+<li>e.g. ws</li>
+</ul></li>
+<li>repeat from 2 as needed</li>
+<li>Commit your changes master</li>
+<li>Push your changes to master</li>
+<li>When you&rsquo;re ready to publish run the publish script
+
+<ul>
+<li>./publish.bash</li>
+</ul></li>
 </ol>
+
+<hr />
 
 <h2>How it works</h2>
 
 <p>The website is being generated using a tool call <a href="https://github.com/caltechlibrary/shorthand">shorthand</a>. It is a simple text label
 expander that also has a built in Markdown processor (turns your Markdown into HTML). It is very friendly for use in Bash scripts.
 We use Bash scripts (e.g. mk-website.sh) to apply <em>shorthand</em> to specific markdown files to render the desired pages.</p>
+
+<p>Additional this repository comes with Windows and Mac OS X compiled versions of <a href="https://github.com/caltechlibrary/ws">ws</a>. This is
+a light weight webserver suitable to use during website editing to see how your changes look in a web browser.</p>
 
 </section>
 

@@ -8,3 +8,10 @@
 + assets/* holds any media assets like image files, logos and such used in the website
 + js/* holds any sitewide JavaScripts files
 
+## special handling 
+
+The following files have a special handline
+
++ *README.md* becomes *index.html*
++ *nav.md* never renders its own html file as it is included by the shorthand template
+
