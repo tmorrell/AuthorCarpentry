@@ -31,23 +31,14 @@ The Caltech Library is recasting its instructional program using a 'Carpentry' a
 ## Topics covered in Author Carpentry include
 
 * Scientific writing in useful, powerful, and open mark-up languages such as LaTeX and Markdown; 
-
 * Formulating and managing citation data, publication lists, and bibliographies in open formats such as BiBTeX and using open source tools such as JabRef;
-
 * Transforming author's  metadata documenting their research outputs into open plain text formats using command line tools, for reuse in research information systems in support of funder compliance mandates and institutional reporting.
-
 * Establishing scholarly identity with ORCiD and managing reputation with ORCiD-enabled research information systems (ImpactStory, OpenVIVO) 
-
 * Determining authorship, contributorship, and copyright ownership in collaborative research projects
-
 * Demonstrating best practices in attribution, acknowledgement, and citation, particularly for non-traditional research outputs (software, datasets)
-
 * Identifying reputable Open Access publications
-
 * Scholarly annotation and open peer review
-
 * Investigating and managing copyright status of a work, and evaluating conditions for Fair Use
-
 * Open sharing of research using Creative Commons licenses, waivers, and public domain marks
 
 ## Get Involved
