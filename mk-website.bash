@@ -31,4 +31,10 @@ softwareCheck
 echo "Generating website with shorthand"
 mkPage nav.md README.md index.html
 echo "Generating CODATA-RDA content"
-mkPage CODATA-RDA/nav.md CODATA-RDA/lesson-01.md CODATA-RDA/index.html
+ls -1 CODATA-RDA | while read FNAME; do
+    HTML_FNAME=$(basename $FNAME .md).html
+    if [ "$HTML_FNAME" = "README.html" ]; then
+        HTML_FNAME=index.html
+    fi
+    mkPage CODATA-RDA/nav.md "CODATA-RDA/$FNAME" "CODATA-RDA/$HTML_FNAME"
+done
