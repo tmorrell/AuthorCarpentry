@@ -1,0 +1,145 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>Caltech Library's Digital Library Development Sandbox</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+<a href="/"><img src="/assets/orangebooks-logo.png" alt="Caltech Library logo"></a>
+<h1>Caltech Library</h1>
+</header>
+<nav>
+<ul>
+<li><a href="CODATA-RDA/">CODATA-RDA</a></li>
+<li><a href="contributing.html">Contribute</a></li>
+</ul>
+
+</nav>
+
+<section>
+<h1>How to build this website</h1>
+
+<p>These are instructions for generate <a href="https://caltechlibrary.github.io/AuthorCarpentry">caltechlibrary.github.io/AuthorCarpentry</a> website.</p>
+
+<h2>Do this the first time</h2>
+
+<h3>On Windows</h3>
+
+<p>If you are on a Windows machine running Bash that comes with Git clone this repository</p>
+
+<ul>
+<li>Start Bash</li>
+<li>clone this repository</li>
+<li>change to the repository directory</li>
+<li>&ldquo;source&rdquo; the etc/setup-windows.bash</li>
+<li>and you&rsquo;re ready to work</li>
+</ul>
+
+<p>These are the command I&rsquo;d enter in Bash</p>
+
+<pre><code class="language-shell">    git clone https://github.com/caltechlibrary/AuthorCarpentry
+    cd AuthorCarpentry
+    . etc/setup-windows.bash
+</code></pre>
+
+<p>NOTE: notice the space after the period the last line. This is the only command where you need that idiom in Bash.</p>
+
+<p>You should now be able run the <em>shorthand</em> command and the <em>./mk-website.bash</em> script should work.</p>
+
+<h3>On a Mac</h3>
+
+<ul>
+<li>Open the Terminal application</li>
+<li>clone this repository</li>
+<li>change to the repository folder</li>
+<li>&ldquo;source&rdquo; the <em>etc/setup-macosx.bash</em> file</li>
+<li>and you&rsquo;re ready to work</li>
+</ul>
+
+<p>These are the command I enter after starting Terminal</p>
+
+<pre><code class="language-shell">    git clone https://github.com/caltechlibrary/AuthorCarpentry
+    cd AuthorCarpentry
+    . etc/setup-mac.bash
+</code></pre>
+
+<p>NOTE: notice the space after the period the last line. This is the only command where you need that idiom in Bash.</p>
+
+<p>You should now be able run the <em>shorthand</em> command and the <em>./mk-website.bash</em> script should work.</p>
+
+<h2>Do this for ongoing work</h2>
+
+<p>Once you have your repositories cloned on going authoring is a little easier.</p>
+
+<h3>Windows workflow</h3>
+
+<p>You need to let Bash know where to find <em>shorthand</em>. The easiest way is</p>
+
+<ol>
+<li>Start Bash</li>
+<li>Change to your repository directory</li>
+<li>Source the etc/setup-windows.bash file</li>
+</ol>
+
+<p>Then you&rsquo;re in the repository directory in Bash do</p>
+
+<pre><code class="language-shell">    . etc/setup-windows.bash
+</code></pre>
+
+<p>You should be ready to continue working.</p>
+
+<h3>On a Mac</h3>
+
+<p>You need to let Bash know where to find <em>shorthand</em>. The easiest way is</p>
+
+<ol>
+<li>Start Terminal</li>
+<li>Change to your repository folder in Terminal
+
+<ul>
+<li>e.g. <code>cd Sites/AuthorCarpentry</code> if that is where you put the repository</li>
+</ul></li>
+<li>Source the etc/setup-windows.bash file</li>
+</ol>
+
+<p>Then you&rsquo;re in the repository folder in Bash do</p>
+
+<pre><code class="language-shell">    . etc/setup-windows.bash
+</code></pre>
+
+<p>You should be ready to continue working.</p>
+
+<h2>Work flow</h2>
+
+<ol>
+<li>Write/edit your content in Markdown files</li>
+<li>For each level of the website you can customize the navigation links in <em>nav.md</em> as need
+
+<ul>
+<li>e.g. add additiona links to pages or lessons</li>
+</ul></li>
+<li>In the root of your repository directory run <code>./mk-website.sh</code> to re-generate all the HTML content from your markdown</li>
+<li>Check the HTML versions and see if they are what you like</li>
+<li>repeat as needed</li>
+</ol>
+
+<h2>How it works</h2>
+
+<p>The website is being generated using a tool call <a href="https://github.com/caltechlibrary/shorthand">shorthand</a>. It is a simple text label
+expander that also has a built in Markdown processor (turns your Markdown into HTML). It is very friendly for use in Bash scripts.
+We use Bash scripts (e.g. mk-website.sh) to apply <em>shorthand</em> to specific markdown files to render the desired pages.</p>
+
+</section>
+
+<footer>
+<span><h1><A href="http://caltech.edu">Caltech</a></h1></span>
+<span>&copy; 2015 <a href="http://library.caltech.edu/CLS_Copyright.htm">Caltech library</a></span>
+<address>1200 E California Blvd, Mail Code 1-32, Pasadena, CA 91125-3200</address> 
+<span>Phone: <a href="tel:+1-626-395-3405">(626)395-3405</a></span>
+<span><a href="mailto:library@caltech.edu">Email Us</a></span>
+<a class="cl-hide" href="sitemap.xml">Site Map</a>
+</footer>
+</body>
+</html>

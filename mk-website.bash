@@ -26,15 +26,29 @@ function mkPage () {
         page.shorthand > $html
 }
 
+function mkDirectory() {
+    FOLDER=$1
+
+    echo "Generating HTML content for $FOLDER"
+    ls -1 $FOLDER | while read FNAME; do
+        if [ -f "$FOLDER/$FNAME" ] && [ "$FNAME" != "nav.md" ]; then
+            EXT=${FNAME:(-3)}
+            if [ "$EXT" = ".md" ]; then
+                HTML_FNAME=$(basename $FNAME .md).html
+                if [ "$HTML_FNAME" = "README.html" ]; then
+                    HTML_FNAME=index.html
+                fi
+                mkPage "$FOLDER/nav.md" "$FOLDER/$FNAME" "$FOLDER/$HTML_FNAME"
+                git add "$FOLDER/$FNAME" "$FOLDER/$HTML_FNAME"
+            fi
+        fi
+    done
+}
+
 echo "Checking necessary software is installed"
 softwareCheck
-echo "Generating website with shorthand"
-mkPage nav.md README.md index.html
-echo "Generating CODATA-RDA content"
-ls -1 CODATA-RDA | while read FNAME; do
-    HTML_FNAME=$(basename $FNAME .md).html
-    if [ "$HTML_FNAME" = "README.html" ]; then
-        HTML_FNAME=index.html
-    fi
-    mkPage CODATA-RDA/nav.md "CODATA-RDA/$FNAME" "CODATA-RDA/$HTML_FNAME"
-done
+echo "Generating website"
+mkDirectory "."
+mkDirectory "CODATA-RDA"
+
+
