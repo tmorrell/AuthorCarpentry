@@ -40,7 +40,12 @@ function mkSite() {
                 if [ "$HTML_FNAME" = "README.html" ]; then
                     HTML_FNAME=index.html
                 fi
-                mkPage "$FOLDER/nav.md" "$FOLDER/$FNAME" "$FOLDER/$HTML_FNAME"
+                # Prefer the local directory's nav.md to the root level one.
+                if [ -f "$FOLDER/nav.md" ]; then
+                    mkPage "$FOLDER/nav.md" "$FOLDER/$FNAME" "$FOLDER/$HTML_FNAME"
+                else
+                    mkPage "nav.md" "$FOLDER/$FNAME" "$FOLDER/$HTML_FNAME"
+                fi
                 git add "$FOLDER/$FNAME" "$FOLDER/$HTML_FNAME"
             fi
         fi
