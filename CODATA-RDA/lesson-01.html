@@ -49,15 +49,15 @@ This lesson explores the anatomy of a DOI, how it is generated, what metadata is
 </p>
 <hr>
 
-**Exercise 1A(1). Demonstrate that a DOI redirects to the web landing page for an associated information resource.**
-
+<h3>Exercise 1A(1). Demonstrate that a DOI redirects to the web landing page for an associated information resource.</h3>
+<pre><code>
 `$curl http://dx.doi.org/10.1103/PhysRev.109.193`
 
 `$ curl -s -S http://dx.doi.org/10.7935/K5H41PBP`
+</pre></code>
+<em>Whose websites did the redirects for each DOI take you to?</em>
 
-_Whose websites did the redirects for each DOI take you to?_
-
-
+---GOT TO HERE---
 **Exercise 1A(2) Resolve a DOI to confirm its validity, and determine the title of the associated information resource.**
 
 `$curl -L -S -S http://dx.doi.org/10.1103/PhysRevLett.116.061102 >redirect1.txt`
