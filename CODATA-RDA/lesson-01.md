@@ -1,5 +1,5 @@
 ---
-## **Module 1A. What are Digital Object Identifiers and Why Do They Matter ?**
+## **Module 1A. What are Digital Object Identifiers and Why Do They Matter to Researchers ?**
 ---
 
 Digital Object Identifiers (DOIs) are unique names assigned to research outputs (as well as other resources) that are represented in some way on the Internet. DOIs are established an international information standard as ISO 26324:2012   The DOI distinguishes the information resource from others (including other versions of the same intellectual work!). The DOI also provides a persistent web link to a representation of that information on the Internet. DOIs are actionable: when put in URL form (http://dx.doi.org/{DOI}, the DOI automatically redirects the user to a landing page that offers information about the resource and often a link to the resource itself.  
