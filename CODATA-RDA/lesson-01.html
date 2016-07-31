@@ -42,7 +42,7 @@ curated datasets, theses, conference papers, and books.</p>
 <p>A DOI is considered a persistent identifier because it reliably resolves to a human- and machine-readable landing page representing the information resource. 
 But the DOI itself is not a guarantee that the dataset or paper is available via Open Access: rather, the DOI resolves to an Open Access landing page that may (or may) permit linking through to the desired object. Whether or not a user can  access the full content depends on various circumstances unrelated to the DOI system: format of the resource, restrictions and conditions governing access; authentication requirements; software compatibility; etc. 
 </p>
-<p></p>Nonetheless, the metadata associated with the DOI is rich enough to provide useful data for researchers. DOI metadata can tell alot about what has been published, who has published it, under what conditions (with what funding, whether the work is available open access, whether the work has been updated since publication, and more.)  
+<p>Nonetheless, the metadata associated with the DOI is rich enough to provide useful data for researchers. DOI metadata can tell alot about what has been published, who has published it, under what conditions (with what funding, whether the work is available open access, whether the work has been updated since publication, and more.)  
 </p>
 <p>
 This lesson explores the anatomy of a DOI, how it is generated, what metadata is associated, and how to get a DOI for a new work. 
@@ -51,31 +51,30 @@ This lesson explores the anatomy of a DOI, how it is generated, what metadata is
 
 <h3>Exercise 1A(1). Demonstrate that a DOI redirects to the web landing page for an associated information resource.</h3>
 <pre>
-`$curl http://dx.doi.org/10.1103/PhysRev.109.193`
+$ curl http://dx.doi.org/10.1103/PhysRev.109.193
+
+$ curl -s -S http://dx.doi.org/10.7935/K5H41PBP
 </pre>
 
-
----GOT TO HERE---
-`$ curl -s -S http://dx.doi.org/10.7935/K5H41PBP`
-</pre></code>
 <em>Whose websites did the redirects for each DOI take you to?</em>
 
-**Exercise 1A(2) Resolve a DOI to confirm its validity, and determine the title of the associated information resource.**
+<h3>Exercise 1A(2) Resolve a DOI to confirm its validity, and determine the title of the associated information resource.</h3>
 
-`$curl -L -S -S http://dx.doi.org/10.1103/PhysRevLett.116.061102 >redirect1.txt`
+<pre>
+    $ curl -L -S -S http://dx.doi.org/10.1103/PhysRevLett.116.061102 >redirect1.txt`
 
-`$grep "<title>" redirect1.txt`
+$ grep "<title>" redirect1.txt
 
-`$ curl -L -s -S http://dx.doi.org/10.7935/K5H41PBP >redirect2.txt`
+$ curl -L -s -S http://dx.doi.org/10.7935/K5H41PBP >redirect2.txt
 
-`$grep "<title>" redirect2.txt`
+$grep "<title>" redirect2.txt
 
-**Exercise 1A(3). Determine if a 'DOI-style string' is a valid DOI.**
+<h3>Exercise 1A(3). Determine if a 'DOI-style string' is a valid DOI.</h3>
 
-`$ curl -L http://10.5454/JPSv1i220161014`
+<pre>$ curl -L http://10.5454/JPSv1i220161014</pre>
 
-[_Note: this faux DOI was assigned by an established publisher to detect and block unauthorized access to their system. The controversy surrounding publisher creation of DOI-like strings for business operations was taken up in an interesting posting on the CrossRef blog, [DOI-like strings and fake DOIs](http://blog.crossref.org/2016/06/doi-like-strings-and-fake-dois.html)_].  ---
-## **Module 1B. Anatomy of the DOI System?**
+[<em>Note: this faux DOI was assigned by an established publisher to detect and block unauthorized access to their system. The controversy surrounding publisher creation of DOI-like strings for business operations was taken up in an interesting posting on the CrossRef blog, [DOI-like strings and fake DOIs](http://blog.crossref.org/2016/06/doi-like-strings-and-fake-dois.html)_].  ---
+## **Module 1B. Anatomy of the DOI System?</em>]
 ---
 The [DOI System](https://www.doi.org/) is the overall infrastructure by which Digital Object Identifiers are assigned, registered, resolved, and associated with valuable metadata including citation, availability of full text, funder information,  licensing information, and more. The following components of the DOI System together make it work.
 * [The International DOI Federation (IDF)](http://www.doi.org/doi_handbook/7_IDF.html) is responsible for the overall governance of the system. IDF is a not-for-profit membership organization that oversees the operations of the federation of Registration Agencies which providing Digital Object Identifier (DOI) services and registration. IDF is also the registration authority for the ISO standard (ISO 26324) for the DOI system.
