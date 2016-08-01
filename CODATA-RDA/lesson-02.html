@@ -1,1 +1,191 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>Caltech Library's Digital Library Development Sandbox</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+<a href="/"><img src="/assets/orangebooks-logo.png" alt="Caltech Library logo"></a>
+<h1>Caltech Library</h1>
+</header>
+<nav>
+<ul>
+<li><a href="../">Author Carpentry</a></li>
+<li>[<a href="./lesson-01.html">Lesson 1</a>]</li>
+<li>[<a href="./lesson-02.html">Lesson 2</a>]</li>
+<li>[<a href="./lesson-03.html">Lesson 3</a>]</li>
+<li>[<a href="./lesson-04.html">Lesson 4</a>]</li>
+</ul>
 
+</nav>
+<h2>LESSON TWO: OPEN CITATIONS and BibTeX FORMAT</h2>
+<section>
+<hr>
+<h2>Module 2A. xxx</h2>
+<hr>
+
+<h3>Introduction</h3>
+
+
+
+<p>xxx
+<p>
+</p>
+<hr>
+
+<h3>Exercise 2A(1). xxx.</h3>
+<pre>
+$ curl http://dx.doi.org/10.1103/PhysRev.109.193
+
+$ curl -s -S http://dx.doi.org/10.7935/K5H41PBP
+</pre>
+
+<em>Whose websites did the redirects for each DOI take you to?</em>
+
+<h3>Exercise 2A(2) Resolve a DOI to a landing page to confirm its validity, and determine the title of the associated information 
+resource.</h3>
+
+<pre>
+$ curl -L -S -S http://dx.doi.org/10.1103/PhysRevLett.116.061102 >redirect1.txt
+
+$ grep "title" redirect1.txt
+
+$ curl -L -s -S http://dx.doi.org/10.7935/K5H41PBP >redirect2.txt
+
+$grep "title" redirect2.txt
+
+</pre>
+
+<h3>Exercise 2A(3). xxx.</h3>
+
+<pre>$ curl -L http://10.5454/JPSv1i220161014</pre>
+
+
+<hr>
+
+<h2>Module 2B. xxx</h2>
+
+<p>The <a href="https://www.doi.org/">International DOI System</a> is the overall infrastructure by which Digital Object Identifiers are assigned, registered, resolved, and associated with valuable metadata including citation, availability of full text, funder information,  licensing information, and more. 
+The following components of the DOI System together make it work:
+<ul>
+<li>The <a href="http://www.doi.org/doi_handbook/7_IDF.html">International DOI Federation (IDF)</a> is responsible for the overall governance of the system. IDF is a not-for-profit membership organization that oversees the operations of the federation of Registration Agencies which provide Digital Object Identifier (DOI) services and registration. 
+IDF is also the registration authority for the ISO standard (ISO 26324) for the DOI system.</li>
+<li><a href="https://www.doi.org/registration_agencies.html">Registration Agencies (RAs)</a> provide services to Registrants (or Members) — allocating DOI name prefixes, registering DOI names and providing the necessary infrastructure to allow Registrants to declare and maintain metadata and state data. 
+Each RA must follow basic protocols and standards of the DOI sytem, including  a minimum metadata standard known as the DOI kernel. 
+Yet each RA has the freedom to implement additional metadata standards, track a range of information about a given DOI resource, and offer public services for querying their databases.  
+As an example, the Registration Agency CrossRef registers a range of metadata about scholarly resources including funding data, license associated with the digital object, author data including ORCiD numbers, and more -- 
+see April Ondis' CrossRef Blog posting "<a href="http://blog.crossref.org/2016/06/beyond-the-doi-to-richer-metadata.html">Beyond the DOI to richer metadata</a>" for more info about their services.
+</li>
+
+</ul>
+
+<p>
+The metadata associated with the DOI is often rich enough to provide useful data for a researcher. This lesson and the next look at the array of useful public data associated with DOIs.</p>
+<img src="../Figure 1.jpg" alt="Anatomy of a DOI"></p>
+
+<hr>
+
+<h3>Exercise 2B(1). Demonstrate that a DOI redirects to the web landing page for an associated information resource</h3>
+
+<pre>
+    
+$curl http://dx.doi.org/10.1103/PhysRev.109.193
+
+$ curl -s -S http://dx.doi.org/10.7935/K5H41PBP
+
+$ curl http://api.crossref.org/prefixes/10.9751
+</pre>
+
+<h3>Exercise 2B(2). Given a DOI, determine which Registration Agency issued it</h3>
+
+<pre>
+$ curl http://doi.crossref.org/doiRA/10.5170/CERN-2000-001.101
+
+$ curl http://doi.crossref.org/doiRA/10.5170/CERN-2000-001.101, 10.2307/1578389
+</pre>
+
+[<em>Note that this lookup service is provided by one of the DOI Agencies, CrossRef,
+yet the query also works for DOIs issued by other Agencies!  
+Each DOI Agency provides various services beyond registering and maintaining DOIs; 
+savvy researchers may wish to check with more than one agency to get relevant information.</em>
+ 
+
+<h3>Exercise 2B(3). Retrieve a list of DataCite members</h3>
+
+<h3>Exercise 2B(4). Determine what information resource is associated with a given DOI</h3>
+<hr>
+<h2>Module 2C.xxx</h2>
+<hr>
+<p>
+    
+
+<p>Researchers may search for metadata associated with DOIs in various ways.  
+This module demonstrates how to use the API services of two Registration Agencies -- CrossRef and DataCite -- to query and retrieve valuable metadata about research outputs. 
+The commands demonstrated use the process of DOI Content Negotiation to retrieve different representations of a work from the API service.
+</p>
+<h3>Exercise 2C(1). Query the Registration Agency API to retrieve a citation for a published article</h3>
+
+<pre>
+    
+$curl http://api.crossref.org/works/http://dx.doi.org/10.1103/PhysRevLett.116.061102 > cite1.txt 
+
+$less cite1.txt
+
+</pre>
+
+<em>Now use Content Negotation to specify a particular format for the citation.</em>
+
+<pre>
+    
+$curl -LH "Accept:text/bibliography; style=bibtex" http://dx.doi.org/10.1103/PhysRevLett.116.061102 > cite1.bib
+
+$cat cite1.bib
+</pre>
+
+<em>Keep this citation for Lesson 2, where we add it to a publications list to include in a new research paper.</em>
+<hr>
+<h3>Module 1D. How do I get a Digital Object Identifier (DOI) for my material?</h3>
+<hr>
+
+<p>You have a few options: </p>
+<ul>
+<li>Use the services of an existing Registrant, such as a Publisher, Library, or Data Center who is assisting you with
+disseminating and preserving your research outputs.</li> 
+
+<li>If you aren't working with one of these RAs, you can submit your work to an open research sharing system such as Zenodo where your ubmission is assigned a DOI, archived, and disseminated over the open Web.
+</li>
+
+<li><Alternatively, your organization can join a DOI Registration Agency (RA) and become a DOI Registrant. This commitment requires an investment of time, infrastructure, funds, and human resources to ensure that registered DOIs are maintained and revised as content changes or moves. Information about becoming a DOI registration is available from the DOI Foundation.
+</li>
+    
+    </ul>
+    
+[<em>
+Note that Zenodo does offer an API service which can be used via Python with the Requests package installed.  
+Advanced registration with Zenodo is necessary to obtain a authorization token to include in requests.</em>]
+
+
+<h3>Exercise 2D. xxx</h3>
+<hr>
+<h3>REFERENCES</h3>
+<ul>
+<li>curl documentation, 2016. <a href="https://curl.haxx.se/">https://curl.haxx.se/</a></li>
+<li>CrossRef REST API, 2016. <a href="https://github.com/CrossRef/rest-api-doc/blob/master/rest_api.md">
+    https://github.com/CrossRef/rest-api-doc/blob/master/rest_api.md</a></li>
+</ul>
+</section>
+
+<footer>
+<span><h1><A href="http://caltech.edu">Caltech</a></h1></span>
+<span>&copy; 2015 <a href="http://library.caltech.edu/CLS_Copyright.htm">Caltech library</a></span>
+<address>1200 E California Blvd, Mail Code 1-32, Pasadena, CA 91125-3200</address> 
+<span>Phone: <a href="tel:+1-626-395-3405">(626)395-3405</a></span>
+<span><a href="mailto:library@caltech.edu">Email Us</a></span>
+<a class="cl-hide" href="sitemap.xml">Site Map</a>
+</footer>
+</body>
+</html>
+Contact GitHub API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Status Help
