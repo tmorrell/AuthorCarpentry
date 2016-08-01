@@ -23,12 +23,94 @@
 <h2>LESSON TWO: OPEN CITATIONS and BibTeX FORMAT (Under Heavy Construction!)</h2>
 <section>
 <hr>
-<h2>Module 2A. xxx</h2>
+<h2>Module 2A. Introducing Open Citations</h2>
 <hr>
+Citations are a special type of research data that provide a succinct representation of a scholarly work in a standard format. Citation styles and syntaxes differ across resource types, subject disciplines and information systems, but generally have a common kernel of elements:
+<ul>
+<li>Creator/Author(s)</li>
+<li>Title of work</li>
+<li>Publisher of work</li>
+<li>Publication date</li>
+<li>Extent/page range</li>
+<li>Locator (where to retrieve the work)</li>
+</ul>
+<p>Additional elements that information providers may also include in their citation data are subject descriptors, keywords, geographic 
+or chronological coverage of the work, funder information, copyright and licensing statements, and so on.</p>
 
-<h3>Introduction</h3>
+<p>Citation data is critical to research and scholarship because: 
+<ol>
+    
+<li>it permits attribution to works that an author draws on and incorporates into her own writings</li>
+<li>it allows the research community to aggregate and integrate the contributions of all contributors into a useful system for search, 
+retrieval, tracking, assessment, and reporting. </li>
+</ol>
+<p>Citation data forms the basis of publication lists on researcher websites; the core of a professional CV, a required section of a grant 
+application, and represent essential data in research information systems such as ORCiD and the DOI Registry.
+</p>
+
+Yet much of the citation data associated with the scholarly record remains under the control of commercial aggregators and publishers, requiring researchers (or their libraries) to pay for costly annual subscriptions. Even when paid, these subscriptions restrict reuse and redistribution of the citation data for many research uses. And often times, the format of the citation is proprietary to a commercially owned reference manager system such as EndNote or RefWorks. Intiatives to develop an Open Citation Corpus for free access and reuse has been discussed and attempted (Shotten 2013) but as of this time there is no single comprehensive source of open access citations to the scholarly literature.
+
+This lesson is an effort to promote Open Citation practices, services, and tools. It highlights citation data and formats that freely available for downloading, editing and enhancing, reusing, and redistributing by researchers. It introduces tools to transform and combine open citations into
+
+This lesson introduces an effective and efficient "open science" approach for creating and maintaining a reference list that can be re-used in research-related systems such as the ORCiD Profile. It relies on the open citation format BibTeX and command line tools to retrieve and combine citations from multiple sources.
+By maintaining a 'master' pubs list in a consistent, open, plain text citation format, a researcher can re-purpose the citation data for reuse in different systems and services.
 
 
+Introduction to Citation Formats and BibTeX
+Exercise 2A. Compare the formatting differences between xxx and BibTeX formats for the same citation
+
+Exercise 2B. Download a selected reference from a free online citation database and save it in BibTeX format
+
+Point your web browser to the Google Scholar Profile for Richard Feynman at https://scholar.google.com/citations?user=B7vSqZsAAAAJ
+
+On the entry for Theory of Fermi interaction, click on the title to go to the landing page for that citation.
+
+Click on the 'Export' button and choose 'BibTeX'. A file called citations.bib will download to your computer.
+
+Repeat the same step for another citation on the list: (a book). This will save to your computer ... Save and rename the file for reuse in a later step: $mv citations.bib cite2.bib
+
+View the citation to familiarize yourself with BibTeX format $cat cite2.bib
+
+Point your web browser to the Google Scholar Profile for Richard Feynman at https://scholar.google.com/citations?user=B7vSqZsAAAAJ
+
+On the entry for Theory of Fermi interaction, click on the title to go to the landing page for that citation.
+
+Click on the 'Export' button and choose 'BibTeX'. A file called citations.bib will download to your computer.
+
+Repeat the same step for another citation on the list: (a book). This will save to your computer ... Save and rename the file for reuse in a later step: $mv citations.bib cite2.bib
+
+View the citation to familiarize yourself with BibTeX format $cat cite2.bib Point your web browser to the Google Scholar Profile for Richard Feynman at https://scholar.google.com/citations?user=B7vSqZsAAAAJ
+
+On the entry for Theory of Fermi interaction, click on the title to go to the landing page for that citation.
+
+Click on the 'Export' button and choose 'BibTeX'. A file called citations.bib will download to your computer.
+
+Repeat the same step for another citation on the list: (a book). This will save to your computer ... Save and rename the file for reuse in a later step: $mv citations.bib cite2.bib
+
+View the citation to familiarize yourself with BibTeX format $cat cite2.bib
+
+Exercise 2B: Fetch a citation in MLA style from an open access library catalog, transform it to BibTeX format, and save for later reuse
+
+$curl -L -S -S http://dx.doi.org/10.1103/PhysRevLett.116.061102 >redirect1.txt
+
+$grep "<title>" redirect1.txt
+
+$ curl -L -s -S http://dx.doi.org/10.7935/K5H41PBP >redirect2.txt
+
+$grep "<title>" redirect2.txt
+
+Exercise 2C. Build a reference list from open citations for ready ingest into BIBTeX-compatible systems
+
+$ cat cite1.bib cite2.bib cite.bib>feynman.bib
+
+Open the file feynman.bib to make sure it is clean and ready to be ingested by a BibTeX-compatible system. $vi feynman.bib Type :wq to exit and save the file.
+
+In the Lesson 3, we will ingest the BibTeX file into a LaTeX authoring platform where we will reference each entry in the list in a new manuscript about Richard Feynman.
+References & Additional Readings
+
+    Shotton, David, 2013. "Publishing: Open citations", Nature 502(7471), http://www.nature.com/news/publishing-open-citations-1.13937
+
+http://api.crossref.org/works?query.author=feynman&query.title=Surely+You're?filter=from-pub-date:1986-01-01
 
 <p>xxx
 <p>
