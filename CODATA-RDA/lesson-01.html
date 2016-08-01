@@ -108,25 +108,30 @@ The Registrant then uses the suffix portion of the DOI sequence to assign unique
 
 <p>
 The metadata associated with the DOI is often rich enough to provide useful data for a researcher. This lesson and the next look at the array of useful public data associated with DOIs.</p>
-<img src="figures/Figure 1/Figure 1.png" alt="Anatomy of a DOI">
-
+<img src="../Figure 1.png" alt="Anatomy of a DOI">
 
 <hr>
 
 <h3>Exercise 1A(1). Demonstrate that a DOI redirects to the web landing page for an associated information resource.
 
-**`$curl http://dx.doi.org/10.1103/PhysRev.109.193`
+<pre>
+    
+$curl http://dx.doi.org/10.1103/PhysRev.109.193
 
-`$ curl -s -S http://dx.doi.org/10.7935/K5H41PBP`
+$ curl -s -S http://dx.doi.org/10.7935/K5H41PBP
 
+$ curl http://api.crossref.org/prefixes/10.9751
+</pre>
 
-`$ curl http://api.crossref.org/prefixes/10.9751`
+<h3>Excercise 1B(2). Given a DOI, determine which Registration Agency issued it</h3>
 
-**Excercise 1B(2). Given a DOI, determine which Registration Agency issued it**`$ curl http://doi.crossref.org/doiRA/10.5170/CERN-2000-001.101`
+<pre>$ curl http://doi.crossref.org/doiRA/10.5170/CERN-2000-001.101
 
-`$ curl http://doi.crossref.org/doiRA/10.5170/CERN-2000-001.101, 10.2307/1578389`
+$ curl http://doi.crossref.org/doiRA/10.5170/CERN-2000-001.101, 10.2307/1578389
+</pre>
 
-[_Note that this lookup service is provided by one of the DOI Agencies, CrossRef, yet the query also works for DOIs issued by other Agencies!  Each DOI Agency provides various services beyond registering and maintaining DOIs; savvy researchers may wish to check with more than one agency to get relevant information._] **Exercise 1B(3). Retrieve a list of DataCite members****Exercise 1C. Determine what information resource is associated with a given DOI**---
+[<em>Note that this lookup service is provided by one of the DOI Agencies, CrossRef, yet the query also works for DOIs issued by other Agencies!  Each DOI Agency provides various services beyond registering and maintaining DOIs; savvy researchers may wish to check with more than one agency to get relevant information._] **Exercise 1B(3). Retrieve a list of DataCite members****Exercise 1C. Determine what information resource is associated with a given DOI</em>
+
 ## **Module 1C. Metadata associated with DOIs**##
 ---
 When works are registered with DOI Registration Agencies, the Registrant (publisher, data center, or other information provider) is required to submit metadata about the resource that the DOI links to. Each Registration Agency maintains its own metadata schema and establishes rules for requiring and populating the metadata elements so it is important to check their respective websites for a list of metadata elements used and whether they are mandatory or optional.
