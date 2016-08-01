@@ -28,20 +28,21 @@
 
 <h3>Introduction</h3>
 
-<p>Digital Object Identifiers (DOIs) are unique names assigned to research outputs and other information resources that are represented in some way on the Internet. DOIs represent an established international information standard, ISO 26324:2012.   
-The DOI distinguishes a given research object from other works, including other versions of the same intellectual material). 
-The DOI also provides a persistent link to a resource on the Internet. DOIs are actionable: when put in URL form 
-(http://dx.doi.org/{DOI}, the DOI automatically redirects the user to a landing page that offers information about the resource 
+<p>Digital Object Identifiers (DOIs) are unique names assigned to research outputs and other information resources that are represented in some way on the Internet. 
+DOIs represent an established international information standard, ISO 26324:2012.   
+The DOI distinguishes a given research object from other works, including other versions of the same intellectual material. 
+The DOI also provides a persistent link to that resource on the Internet. DOIs are actionable: when put in URL form 
+(http://dx.doi.org/{DOI}, the DOI automatically redirects to a landing page that offers information about the research object 
 and often a link to the resource itself.</p> 
 
 <p>The DOI is NOT by itself a seal of quality. Yet information resources that are assigned DOIs tend to be of enduring value; 
 are likely to be used and cited by others; and are maintained by a publisher or other information provider who is committed to curating
 and preserving the resource over time. Examples of research-related information resources assigned DOIs include journal articles, 
-curated datasets, theses, conference papers, and books.</p>
+curated datasets, theses, conference papers, pre-prints, technical reports, and books.</p>
 
 <p>A DOI is considered a persistent identifier because it reliably resolves to a human- and machine-readable landing page representing the information resource. 
-But the DOI itself is not a guarantee that the dataset or paper is available via Open Access: rather, the DOI resolves to an Open Access landing page that may (or may) permit linking through to the desired object. Whether or not a user can  access the full content depends on various circumstances unrelated to the DOI system: format of the resource, restrictions and conditions governing access; authentication requirements; software compatibility; etc. 
-Whether or not a user can click through the landing page to fetch the full content depends on various circumstances unrelated to the DOI system: format of the resource, restrictions and conditions governing access; authentication requirements; software compatibility; etc. 
+But the DOI itself is not a guarantee that the dataset or paper is available via Open Access: rather, the DOI resolves to an Open Access landing page that may (or may not) permit linking through to the desired object. 
+Whether or not a user can  access the full content depends on various circumstances unrelated to the DOI system: format of the resource, restrictions and conditions governing access; authentication requirements; software compatibility; etc. 
 </p>
 <p>Nonetheless, the metadata associated with the DOI is rich enough to provide useful data for researchers. DOI metadata can tell alot about what has been published, who has published it, under what conditions (with what funding, whether the work is available open access, whether the work has been updated since publication, and more.)  
 </p>
@@ -50,7 +51,7 @@ This lesson explores the anatomy of a DOI, how it is generated, what metadata is
 </p>
 <hr>
 
-<h3>Exercise 1A(1). Demonstrate that a DOI redirects to the web landing page for an associated information resource.</h3>
+<h3>Exercise 1A(1). Demonstrate that a DOI redirects to a landing page for an associated information resource.</h3>
 <pre>
 $ curl http://dx.doi.org/10.1103/PhysRev.109.193
 
@@ -62,7 +63,7 @@ $ curl -s -S http://dx.doi.org/10.7935/K5H41PBP
 <h3>Exercise 1A(2) Resolve a DOI to a landing page to confirm its validity, and determine the title of the associated information resource.</h3>
 
 <pre>
-$ curl -L -S -S http://dx.doi.org/10.1103/PhysRevLett.116.061102 >redirect1.txt`
+$ curl -L -S -S http://dx.doi.org/10.1103/PhysRevLett.116.061102 >redirect1.txt
 
 $ grep "<title>" redirect1.txt
 
@@ -76,10 +77,14 @@ $grep "<title>" redirect2.txt
 
 <pre>$ curl -L http://10.5454/JPSv1i220161014</pre>
 
-[<em>Note: this faux DOI was assigned by an established publisher to detect and block unauthorized access to their system. The controversy surrounding publisher creation of DOI-like strings for business operations was taken up in an interesting posting on the CrossRef blog, [DOI-like strings and fake DOIs](http://blog.crossref.org/2016/06/doi-like-strings-and-fake-dois.html)_].  ---
-## **Module 1B. Anatomy of the DOI System?</em>]
+[<em>Note: this faux DOI was assigned by an established publisher to detect and block unauthorized access to their system. 
+The controversy surrounding publisher creation of DOI-like strings for business operations was taken up in an interesting posting on the CrossRef blog, "<a href="http://blog.crossref.org/2016/06/doi-like-strings-and-fake DOIs">DOI like strings and fake DOIs</a>".
 
-<h2> Anatomy of the DOI System</h2>
+<hr>
+
+<h3>Module 1B. Anatomy of the DOI System?</h3>
+
+
 
 <p>The <a href="https://www.doi.org/">International DOI System</a> is the overall infrastructure by which Digital Object Identifiers are assigned, registered, resolved, and associated with valuable metadata including citation, availability of full text, funder information,  licensing information, and more. The following components of the DOI System together make it work.
 <ul>
