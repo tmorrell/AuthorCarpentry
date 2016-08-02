@@ -53,7 +53,7 @@ This lesson explores the anatomy of a DOI, how it is generated, what metadata is
 
 <h3>Exercise 1A(1). Demonstrate that a DOI redirects to a landing page for an associated information resource.</h3>
 <pre>
-$ curl http://dx.doi.org/10.1103/PhysRev.109.193
+$ curl -s -S http://dx.doi.org/10.1103/PhysRev.109.193
 
 $ curl -s -S http://dx.doi.org/10.7935/K5H41PBP
 </pre>
@@ -64,11 +64,11 @@ $ curl -s -S http://dx.doi.org/10.7935/K5H41PBP
 resource.</h3>
 
 <pre>
-$ curl -L -S -S http://dx.doi.org/10.1103/PhysRevLett.116.061102 >redirect1.txt
+$ curl  -s -S -L http://dx.doi.org/10.1103/PhysRevLett.116.061102 >redirect1.txt
 
 $ grep "title" redirect1.txt
 
-$ curl -L -s -S http://dx.doi.org/10.7935/K5H41PBP >redirect2.txt
+$ curl -s -S -L http://dx.doi.org/10.7935/K5H41PBP >redirect2.txt
 
 $grep "title" redirect2.txt
 
@@ -83,16 +83,16 @@ The controversy surrounding publisher creation of DOI-like strings for business 
 in an interesting posting on the CrossRef blog, 
 "<a href="http://blog.crossref.org/2016/06/doi-like-strings-and-fake DOIs">DOI like strings and fake DOIs</a>"</em>.
 
-<h3>Exercise 1A(4). Retrieve the landing page for a DOI object and "pretty print" the output</h3>
+<h3>Exercise 1A(4). Retrieve the landing page for a DOI object and "pretty print" the output to something easier on the eyes</h3>
 
 <pre>
-$ curl  -L http://dx.doi.org/10.7935/K5MW2F23 >ex1A4.txt
-$less ex1A4.txt</pre>
-<p>>What format is the landing page provided in?</p>
+$ curl http://dx.doi.org/10.7935/K5MW2F23 >ex1A4.txt
+$ less ex1A4.txt</pre>
+<p>What format is the landing page provided in?</p>
 
-<p> To make the retrieved data easier to read, pretty print it by removing the markup using <pre>sed</pre>, the Unix stream editor.
+<p>To make the retrieved data easier to read, remove the markup using the the Unix stream editor <pre>sed</pre>.
 
-<pre>$ sed -e 's/<[^>]*>//g' ex1A4.txt</pre>
+<pre>$ sed -e 's/<[^>]*>//g' ex1A4.txt > ex<1A4_pretty.txt/pre>
 
 
 <hr>
@@ -129,14 +129,14 @@ The metadata associated with the DOI is often rich enough to provide useful data
 
 <pre>
     
-$curl http://dx.doi.org/10.1103/PhysRev.109.193
+$ curl http://dx.doi.org/10.1103/PhysRev.109.193
 
-$ curl -s -S http://dx.doi.org/10.7935/K5H41PBP
+$ curl http://dx.doi.org/10.7935/K5H41PBP
 
 $ curl http://api.crossref.org/prefixes/10.9751
 </pre>
 
-<h3>Excercise 1B(2). Given a DOI, determine which Registration Agency issued it</h3>
+<h3>Exercise 1B(2). Given a DOI, determine which Registration Agency issued it</h3>
 
 <pre>
 $ curl http://doi.crossref.org/doiRA/10.5170/CERN-2000-001.101
@@ -144,22 +144,21 @@ $ curl http://doi.crossref.org/doiRA/10.5170/CERN-2000-001.101
 $ curl http://doi.crossref.org/doiRA/10.5170/CERN-2000-001.101, 10.2307/1578389
 </pre>
 
-[<em>Note that this lookup service is provided by one of the DOI Agencies, CrossRef,
-yet the query also works for DOIs issued by other Agencies!  
-Each DOI Agency provides various services beyond registering and maintaining DOIs; 
-savvy researchers may wish to check with more than one agency to get relevant information.</em>
+[<em>Note that the lookup service is provided by one of the Registration Agencies, CrossRef, yet the query also works for DOIs issued by other 
+Agencies!  Each DOI Agency provides various services beyond registering and maintaining DOIs; 
+savvy researchers may wish to check with more than one RA to get useful information.</em>
  
 
 <h3>Exercise 1B(3). Retrieve a list of DataCite members</h3>
 <pre>
-$curl -s -S http://api.datacite.org/members >datacite.txt
-$less datacite.txt
+$ curl -s -S http://api.datacite.org/members >datacite.txt
+$ less datacite.txt
 </pre>
-Note that the data comes from the Datacite API in json (Javasrcipt Object Notation) format -- an increasingly popular metadata standard for Web services.
-It is not so easy to read, so let's convert it to something more human-readable.
+Note that the data comes from the Datacite API in JSON format (Javascript Object Notation)  -- an increasingly popular metadata standard for Web services.
+JSON is great for machines to read, but not so much for humans.  So let's convert it to something easier on the eyes.
 <pre>
-$cat datacite.txt | tr ',' '\102' >datacite_pretty.txt
-$less datacite_pretty.txt
+$ cat datacite.txt | tr ',' '\102' >datacite_pretty.txt
+$ less datacite_pretty.txt
 </pre>
 
 <hr>
@@ -186,19 +185,19 @@ The commands demonstrated use the process of DOI Content Negotiation to retrieve
 
 <pre>
     
-$curl http://api.crossref.org/works/http://dx.doi.org/10.1103/PhysRevLett.116.061102 > cite1.txt 
+$ curl http://api.crossref.org/works/http://dx.doi.org/10.1103/PhysRevLett.116.061102 > cite1.txt 
 
-$less cite1.txt
+$ less cite1.txt
 
 </pre>
 
-<em>Now use Content Negotation to specify a particular format for the citation.</em>
+<em>Now use Content Negotation to specify we want the citation provided in the open citation format BibTeX.</em>
 
 <pre>
     
-$curl -LH "Accept:text/bibliography; style=bibtex" http://dx.doi.org/10.1103/PhysRevLett.116.061102 > cite1.bib
+$ curl -LH "Accept:text/bibliography; style=bibtex" http://dx.doi.org/10.1103/PhysRevLett.116.061102 > cite1.bib
 
-$cat cite1.bib
+$ cat cite1.bib
 </pre>
 
 <em>Keep this citation for Lesson 2, where we add it to a publications list to include in a new research paper.</em>
@@ -211,22 +210,34 @@ $cat cite1.bib
 <li>Use the services of an existing Registrant, such as a Publisher, Library, or Data Center who is assisting you with
 disseminating and preserving your research outputs.</li> 
 
-<li>If you aren't working with one of these RAs, you can submit your work to an open research sharing system such as Zenodo where your ubmission is assigned a DOI, archived, and disseminated over the open Web.
+<li>Submit your work to an open research sharing system such as Zenodo who issues DOIs as part of their free services to researchers.
 </li>
 
 <li><Alternatively, your organization can join a DOI Registration Agency (RA) and become a DOI Registrant. This commitment requires an investment of time, infrastructure, funds, and human resources to ensure that registered DOIs are maintained and revised as content changes or moves. Information about becoming a DOI registration is available from the DOI Foundation.
 </li>
     
-    </ul>
+</ul>
     
 [<em>Note that Zenodo does offer an API service which can be used via Python with the Requests package installed.  
 Advanced registration with Zenodo is necessary to obtain a authorization token to include in requests.</em>]
 
+<H3>Exercise 1D(1). Quick field trip to Zenodo to explore its services</h3>
 
+Point your web browser to Zenodo:
 
+<pre>http://zenodo.org</pre>
 
+Search or browse for the many different types of research resources deposited it for sharing. Are you surprised by the many different types of objects being deposited and assigned DOIs?
 
-Point your web browser to http://dx.doi.org/10.5281/zenodo.10238
+<h3>Grande Finale! Exercise 1D(2). Retrieve a list of work types that are assigned DOI's by DataCite</h3>
+<pre>
+$ curl https://api.datacite.org/work-types>works_raw.txt
+$ head works_raw.txt
+$ cat works_raw | tr ',' '\012' >works_clean.txt
+$ sed -n '/"title":/p' works_clean.txt
+$ sed -i 's/^.*//g' works_clean.txt | wc -l works_clean.txt
+</pre>
+<p>How many work types can be assigned DOI's via DataCite?</p>
 <hr>
 <h3>REFERENCES</h3>
 <ul>
