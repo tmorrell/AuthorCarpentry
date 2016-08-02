@@ -65,7 +65,7 @@ $ curl -s -S http://dx.doi.org/10.7935/K5H41PBP
 <pre>
 $ curl  -s -S -L http://dx.doi.org/10.1103/PhysRevLett.116.061102 >redirect1.txt
 
-$ grep "title" redirect1.txt
+$ grep "citation_title" redirect1.txt
 
 $ curl -s -S -L http://dx.doi.org/10.7935/K5H41PBP >redirect2.txt
 
@@ -75,7 +75,7 @@ $ grep "title" redirect2.txt
 
 <h3>Exercise 1A(3). Determine if a 'DOI-style string' is a valid DOI</h3>
 
-<pre>$ curl -L http://10.5454/JPSv1i220161014</pre>
+<pre>$ curl -s -S -L http://dx.doi.org/10.5454/JPSv1i220161014 | grep "title"</pre>
 
 Note: The faux DOI used in this example was assigned by an established publisher to detect and block unauthorized access to their system. 
 The controversy surrounding publisher creation of DOI-like strings for business operations was taken up in an interesting posting on the CrossRef blog, 
@@ -84,15 +84,17 @@ The controversy surrounding publisher creation of DOI-like strings for business 
 <h3>Exercise 1A(4). Retrieve the landing page for a DOI object and "pretty print" the output to something easier on the eyes</h3>
 
 <pre>
-$ curl http://dx.doi.org/10.7935/K5MW2F23 >ex1A4.txt
+$ curl -s -S -L http://dx.doi.org/10.7935/K5MW2F23 >ex1A4.txt
 $ less ex1A4.txt
 </pre>
 
 What format is the landing page provided in?
 
-<p>To make the retrieved data easier to read, remove the markup using the the Unix stream editor sed.
+<p>To make the retrieved data easier to read, remove the markup using the the Unix stream editor sed. 
+A regular expression is used to represent all unwanted content between html brackets.
+    
 
-<pre>$ sed -e 's/<[^>]*>//g' ex1A4.txt > ex<1A4_pretty.txt</pre>
+<pre>$ sed -e 's/<[^>]*>//g' ex1A4.txt > ex1A4_pretty.txt</pre>
 
 
 <hr>
@@ -129,9 +131,9 @@ The metadata associated with the DOI is often rich enough to provide useful data
 
 <pre>
     
-$ curl http://dx.doi.org/10.1103/PhysRev.109.193
+$ curl -s -S -L http://dx.doi.org/10.1103/PhysRev.109.193
 
-$ curl http://dx.doi.org/10.7935/K5H41PBP
+$ curl -s -S -L http://dx.doi.org/10.7935/K5H41PBP
 
 </pre>
 
@@ -140,7 +142,7 @@ $ curl http://dx.doi.org/10.7935/K5H41PBP
 <pre>
 $ curl http://doi.crossref.org/doiRA/10.5170/CERN-2000-001.101
 
-$ curl http://doi.crossref.org/doiRA/10.5170/CERN-2000-001.101, 10.2307/1578389
+$ curl http://doi.crossref.org/doiRA/10.5170/CERN-2000-001.101, doi.crossref.org/doiRA/10.2307/1578389 
 </pre>
 
 Note that the lookup service is provided by one of the Registration Agencies, CrossRef, yet the query also works for DOIs issued by other 
@@ -156,7 +158,7 @@ $ less datacite.txt
 Note that the data comes from the Datacite API in JSON format (Javascript Object Notation)  -- an increasingly popular metadata standard for Web services.
 JSON is great for machines to read, but not so much for humans! So let's convert it to something easier on the eyes.
 <pre>
-$ cat datacite.txt | tr ',' '\102' >datacite_pretty.txt
+$ cat datacite.txt | tr ',' '\012' >datacite_pretty.txt
 $ less datacite_pretty.txt
 </pre>
 
@@ -189,14 +191,15 @@ $ curl http://api.crossref.org/works/http://dx.doi.org/10.1103/PhysRevLett.116.0
 $ less cite1.txt
 
 </pre>
+The retrieved citation is in JSON format -- a popular way for presenting citation metadata that can be parsed by machines. 
+But what if you need a different citation format for your purposes?
 
-<em>Now use Content Negotation to specify we want the citation provided in the open citation format BibTeX.</em>
+Let's try Content Negotation to specify that we want the citation provided in BibTeX, a citation format used in many research information systems.
 
 <pre>
     
-$ curl -LH "Accept:text/bibliography; style=bibtex" http://dx.doi.org/10.1103/PhysRevLett.116.061102 > cite1.bib
+$ curl -LH "Accept:text/bibliography; style=bibtex" http://dx.doi.org/10.1103/PhysRevLett.116.061102 > cite1.bib | cat cite1.bib |tr ',' '\012'
 
-$ cat cite1.bib
 </pre>
 
 <em>Keep this citation for Lesson 2, where we add it to a publications list to include in a new research paper.</em>
