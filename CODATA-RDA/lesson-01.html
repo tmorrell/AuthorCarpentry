@@ -83,6 +83,18 @@ The controversy surrounding publisher creation of DOI-like strings for business 
 in an interesting posting on the CrossRef blog, 
 "<a href="http://blog.crossref.org/2016/06/doi-like-strings-and-fake DOIs">DOI like strings and fake DOIs</a>"</em>.
 
+<h3>Exercise 1A(4). Retrieve the landing page for a DOI object and "pretty print" the output</h3>
+
+<pre>
+$ curl  -L http://dx.doi.org/10.7935/K5MW2F23 >ex1A4.txt
+$less ex1A4.txt</pre>
+<p>>What format is the landing page provided in?</p>
+
+<p> To make the retrieved data easier to read, pretty print it by removing the markup using <pre>sed</pre>, the Unix stream editor.
+
+<pre>$ sed -e 's/<[^>]*>//g' ex1A4.txt</pre>
+
+
 <hr>
 
 <h2>Module 1B. Anatomy of the DOI System?</h2>
@@ -113,7 +125,7 @@ The metadata associated with the DOI is often rich enough to provide useful data
 
 <hr>
 
-<h3>Exercise 1A(1). Demonstrate that a DOI redirects to the web landing page for an associated information resource</h3>
+<h3>Exercise 1B(1). Demonstrate that a DOI redirects to the web landing page for an associated information resource</h3>
 
 <pre>
     
@@ -139,9 +151,19 @@ savvy researchers may wish to check with more than one agency to get relevant in
  
 
 <h3>Exercise 1B(3). Retrieve a list of DataCite members</h3>
+<pre>
+$curl -s -S http://api.datacite.org/members >datacite.txt
+$less datacite.txt
+</pre>
+Note that the data comes from the Datacite API in json (Javasrcipt Object Notation) format -- an increasingly popular metadata standard for Web services.
+It is not so easy to read, so let's convert it to something more human-readable.
+<pre>
+$cat datacite.txt | tr ',' '\102' >datacite_pretty.txt
+$less datacite_pretty.txt
+</pre>
 
-<h3>Exercise 1B(4). Determine what information resource is associated with a given DOI</h3>
 <hr>
+
 <h2>Module 1C. Metadata associated with DOIs</h2>
 <hr>
 <p>
@@ -197,12 +219,14 @@ disseminating and preserving your research outputs.</li>
     
     </ul>
     
-[<em>
-Note that Zenodo does offer an API service which can be used via Python with the Requests package installed.  
+[<em>Note that Zenodo does offer an API service which can be used via Python with the Requests package installed.  
 Advanced registration with Zenodo is necessary to obtain a authorization token to include in requests.</em>]
 
 
-<h3>Exercise 1D. Look at Zenodo content and see the DOI assigned.**##**References & Additional Readings</h3>
+
+
+
+Point your web browser to http://dx.doi.org/10.5281/zenodo.10238
 <hr>
 <h3>REFERENCES</h3>
 <ul>
