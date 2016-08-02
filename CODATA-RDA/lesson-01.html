@@ -236,14 +236,15 @@ Point your web browser to Zenodo:
 Search or browse for the many different types of research resources deposited it for sharing. Are you surprised by the many different types of objects being deposited and assigned DOIs?
 
 <h3>Grande Finale! Exercise 1D(2). Retrieve a list of work types that are assigned DOI's by DataCite</h3>
+This exercise applies various UNIX commands to answer the question "What types of works can be assigned DataCite DOI's and how many types?"
 <pre>
 $ curl https://api.datacite.org/work-types>works_raw.txt
 $ head works_raw.txt
 $ cat works_raw | tr ',' '\012' >works_clean.txt
-$ sed -n '/"title":/p' works_clean.txt
-$ sed -i 's/^.*//g' works_clean.txt | wc -l works_clean.txt
+$ cat works_clean.txt | grep "title" | cut –d : -f 3 > works_final.txt
+$ cat works_final.txt | wc -l
 </pre>
-<p>How many work types can be assigned DOI's via DataCite?</p>
+
 <hr>
 <h3>REFERENCES</h3>
 <ul>
