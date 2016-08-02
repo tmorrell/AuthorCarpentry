@@ -60,8 +60,7 @@ $ curl -s -S http://dx.doi.org/10.7935/K5H41PBP
 
 <em>Whose websites did the redirects for each DOI take you to?</em>
 
-<h3>Exercise 1A(2) Resolve a DOI to a landing page to confirm its validity, and determine the title of the associated information 
-resource.</h3>
+<h3>Exercise 1A(2) Resolve a DOI to a landing page to confirm its validity, and determine the title of the associated digital object.</h3>
 
 <pre>
 $ curl  -s -S -L http://dx.doi.org/10.1103/PhysRevLett.116.061102 >redirect1.txt
@@ -70,29 +69,29 @@ $ grep "title" redirect1.txt
 
 $ curl -s -S -L http://dx.doi.org/10.7935/K5H41PBP >redirect2.txt
 
-$grep "title" redirect2.txt
+$ grep "title" redirect2.txt
 
 </pre>
 
-<h3>Exercise 1A(3). Determine if a 'DOI-style string' is a valid DOI.</h3>
+<h3>Exercise 1A(3). Determine if a 'DOI-style string' is a valid DOI</h3>
 
 <pre>$ curl -L http://10.5454/JPSv1i220161014</pre>
 
-[<em>Note: this faux DOI was assigned by an established publisher to detect and block unauthorized access to their system. 
-The controversy surrounding publisher creation of DOI-like strings for business operations was taken up 
-in an interesting posting on the CrossRef blog, 
+[<em>Note: The faux DOI used in this example was assigned by an established publisher to detect and block unauthorized access to their system. 
+The controversy surrounding publisher creation of DOI-like strings for business operations was taken up in an interesting posting on the CrossRef blog, 
 "<a href="http://blog.crossref.org/2016/06/doi-like-strings-and-fake DOIs">DOI like strings and fake DOIs</a>"</em>.
 
 <h3>Exercise 1A(4). Retrieve the landing page for a DOI object and "pretty print" the output to something easier on the eyes</h3>
 
 <pre>
 $ curl http://dx.doi.org/10.7935/K5MW2F23 >ex1A4.txt
-$ less ex1A4.txt</pre>
-<p>What format is the landing page provided in?</p>
+$ less ex1A4.txt
+</pre>
+<em>What format is the landing page provided in?</em>
 
 <p>To make the retrieved data easier to read, remove the markup using the the Unix stream editor <pre>sed</pre>.
 
-<pre>$ sed -e 's/<[^>]*>//g' ex1A4.txt > ex<1A4_pretty.txt/pre>
+<pre>$ sed -e 's/<[^>]*>//g' ex1A4.txt > ex<1A4_pretty.txt</pre>
 
 
 <hr>
