@@ -217,7 +217,7 @@ disseminating and preserving your research outputs.</li>
 <li>Submit your work to an open research sharing system such as Zenodo who issues DOIs as part of their 
 free services to researchers.</li>
 
-<li><Alternatively, your organization can join a DOI Registration Agency (RA) and become a DOI Registrant. 
+<li>Alternatively, your organization can join a DOI Registration Agency (RA) and become a DOI Registrant. 
 This commitment requires an investment of time, infrastructure, funds, and human resources to ensure that 
 registered DOIs are maintained and revised as content changes or moves. Information about becoming a DOI registration is 
 available from the DOI Foundation.</li>
@@ -239,9 +239,9 @@ Search or browse for the many different types of research resources deposited it
 <h3>Grande Finale! Exercise 1D(2). Retrieve a list of work types that are assigned DOI's by DataCite</h3>
 This exercise applies various UNIX commands to answer the question "What types of works can be assigned DataCite DOI's and how many types?"
 <pre>
-$ curl https://api.datacite.org/work-types>works_raw.txt
+$ curl https://api.datacite.org/work-types > works_raw.txt
 $ head works_raw.txt
-$ cat works_raw.txt | tr ',' '\012' >works_clean.txt
+$ cat works_raw.txt | tr ',' '\012' > works_clean.txt
 $ cat works_clean.txt | grep "title" | cut –d : -f 3 > works_final.txt
 $ cat works_final.txt | wc -l
 </pre>
