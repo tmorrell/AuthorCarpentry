@@ -25,7 +25,7 @@
 <hr>
 <h2>Module 2A. Introducing Open Citations</h2>
 <hr>
-Citations are a special type of research data that provide a succinct representation of a scholarly work in a standard format. Citation styles and syntaxes differ across resource types, subject disciplines and information systems, but generally have a common kernel of elements:
+<p>Citations are a special type of research data that provide a succinct representation of a scholarly work in a standard format. Citation styles and syntaxes differ across resource types, subject disciplines and information systems, but generally have a common kernel of elements:</p>
 <ul>
 <li>Creator/Author(s)</li>
 <li>Title of work</li>
@@ -37,7 +37,7 @@ Citations are a special type of research data that provide a succinct representa
 <p>Additional elements that information providers may also include in their citation data are subject descriptors, keywords, geographic 
 or chronological coverage of the work, funder information, copyright and licensing statements, and so on.</p>
 
-<p>Citation data is critical to research and scholarship because: 
+<p>Citation data is critical to research and scholarship because:</p> 
 <ol>
     
 <li>it permits attribution to works that an author draws on and incorporates into her own writings</li>
@@ -45,43 +45,51 @@ or chronological coverage of the work, funder information, copyright and licensi
 <li>it allows the research community to aggregate and integrate the contributions of all contributors into a useful system for search, 
 retrieval, tracking, assessment, and reporting. </li>
 </ol>
-<p>Citation data is used across the research ecosystem. Citations from the basis of publication lists on researcher websites; 
-represent the core of a professional CV; get pasted into a required section of a grant 
-application or progress report;, and represent essential data in research information systems such as ORCiD and the DOI Registry.
+<p>Citation data is used across the research ecosystem. Citations form the basis of publication lists on researcher websites; scholarly sharing sites and repositories;
+they represent the core of a professional CV; get pasted into a required section of funder
+applications and progress reports; and represent essential data in research information systems such as ORCiD and the DOI Registry.
 </p>
 
 <p>
-    An increasing percent of  citation data associated with the scholarly record is being aggregated by the DOI Registration Agencies, 
-    particularly CrossRef, because they require metadata about the digital object be deposited before issuing the DOI. 
-    Their databases are open and accessi ble at the command line (as we saw in Lesson 1). Good news!</p>
+    An increasing amount of citation data associated with the scholarly record is being aggregated by the DOI Registration Agencies, 
+    particularly CrossRef, because they require metadata about every digital object being deposited for DOIs. 
+    Their databases are open and accessible at the command line (as we saw in Lesson 1). Good news!</p>
 
 
-This lesson introduces an effective and efficient "open science" approach for creating and maintaining a reference list that can be 
-re-used in research-related systems such as the ORCiD Profile. It relies on the open citation format BibTeX and command line tools to retrieve and combine citations from multiple sources.
-By maintaining a 'master' pubs list in a consistent, open, plain text citation format, a researcher can re-purpose the citation data for reuse in different systems and services.
-
+This lesson introduces an effective and efficient "open science" approach for creating and maintaining a citations list that can be 
+re-used in research-related systems such as the ORCiD Profile. It relies on the open citation format BibTeX to retrieve references from the Web 
+and applies command line tools to combine citations from multiple sources. By maintaining a 'master' bibliography in a consistent, open, 
+plain text citation format, a researcher can re-purpose the citation data for reuse in different systems and services.
 
 <hr>
-<h3>Exercise 2A. After watching a demo of the ORCiD system and a researcher's ORCiD profile, register for your own ORCiD using 
+<h3>Exercise 2A. After watching a demo of the ORCiD system and a viewing researcher's ORCiD profile, register for your own ORCiD using 
 their quicky and easy form.</h3>
 
 <pre>Point your web browser to http://orcid.org</pre>
-<p>>Wait for the confirmation email from ORCiD to arrive in your email inbox and click on the link it contains to establish your own unique 
-16-digit Researcher ID -- like a DOI but for people. <em>Welcome to the global scholarly web where you get credit for all your work and contributions using ORCiD!
-</em>
+<p>Wait for the confirmation email from ORCiD to arrive in your email inbox and click on the link it contains to establish your own unique 
+16-digit Researcher ID -- like a DOI but for people.</p>
+<p><em>Welcome to the global scholarly web where you get credit for all your work and contributions using ORCiD; 
+no one claims your works as their own; and colleagues don't get confused whether a given research work is yours or someone's with a similar or same name!
+</em></p>
 
-<h3>Exercise 2B. Download several references from the various citation databases we visit</h3>
+<h3>Exercise 2B. Fetch several references from the various citation databases to compose a bibliography</h3>
 <p> Save each citation in BibTeX format for reuse in various research systems (e.g., save as cite1.bib, cite2.bib, etc.)</p>
  
-<p></p>Concatenate the BibTeX citations into one bibliography using command line tools:
- <pre>$cat cite1.bib, cite2.bib, cite3 bib > citations.bib</pre>
- Save that concatenated file for use in a future lesson here at Trieste!</p>
+<p>Concatenate the individual BibTeX citations into one bibliography using command line tools:
+ <pre>$cat cite1.bib, cite2.bib, cite3 bib > citations.bib
+ $cat citations.bib</pre>
+ Everything look okay?  Save that concatenated file for use in a future lesson here at Trieste!</p>
 
-<h3>Exercise 2C. Add a citation to your ORCiD Profile by uploading one of the BiBTeX files saved in Ex. 2A.</h3>
+<h3>Exercise 2C. Add a citation to your new ORCiD Profile by uploading one of the BiBTeX files saved in Ex. 2A.</h3>
 
-Once done, try ORCiD's own integrated tools for finding and adding citations. Let's discuss the pros and cons of uploading citations 
-from BiBTeX files vs. relying on the ORCiD wizards. Which one would import grey literature (e.g., dissertations, tech reports)? Which one would import older articles that pre-date the emergence of the DOI standard?
+<p>Once done, try ORCiD's own integrated tools for finding and adding citations.</p> 
 
+<p></p>Let's discuss the pros and cons of uploading citations from BiBTeX files vs. relying on the ORCiD wizards. 
+<ul>
+<li>Which one would import grey literature (e.g., dissertations, tech reports)? </li>
+<li>Which one would import older articles that pre-date the emergence of the DOI standard?</li>
+<li>Which one could carry along metadata you prefer not to be included in your ORCiD profile?</li>
+</ul>
 
 <h3>REFERENCES</h3>
 <ul>
