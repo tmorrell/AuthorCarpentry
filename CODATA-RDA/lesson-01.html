@@ -62,7 +62,7 @@
 
 <p><code>$ curl -s -S -L http://dx.doi.org/10.5454/JPSv1i220161014 | grep &quot;title&quot;</code></p>
 
-<p>Note: The faux DOI used in this example was assigned by an established publisher to detect and block unauthorized access to their system. The controversy surrounding publisher creation of DOI-like strings for business operations was taken up in an interesting posting on the CrossRef blog, &ldquo;DOI like strings and fake DOIs&rdquo;.</p>
+<p>Note: The faux DOI used in this example was assigned by an established publisher to detect and block unauthorized access to their system. The controversy surrounding publisher creation of DOI-like strings for business operations was taken up in an interesting posting on the CrossRef blog, <a href="http://blog.crossref.org/2016/06/doi-like-strings-and-fake-dois.html">DOI like strings and fake DOIs</a>.</p>
 
 <h3>Exercise 1A(4). Retrieve the landing page for a DOI object and &ldquo;pretty print&rdquo; the output to something easier on the eyes</h3>
 
@@ -175,7 +175,7 @@
 <p><code>$ curl https://api.datacite.org/work-types &gt; works_raw.txt</code>
 <code>$ head works_raw.txt</code>
 <code>$ cat works_raw.txt | tr ',' '\012' &gt; works_clean.txt</code>
-<code>$ cat works_clean.txt | grep &quot;title&quot; | cut –d : -f 3 &gt; works_final.txt</code>
+<code>$ cat works_clean.txt | grep &quot;title&quot; | cut -d : -f 3 &gt; works_final.txt</code>
 <code>$ cat works_final.txt | wc -l</code></p>
 
 <hr />

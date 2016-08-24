@@ -38,7 +38,7 @@ This lesson explores the anatomy of a DOI, how it is generated, what metadata is
 
 `$ curl -s -S -L http://dx.doi.org/10.5454/JPSv1i220161014 | grep "title"`
 
-Note: The faux DOI used in this example was assigned by an established publisher to detect and block unauthorized access to their system. The controversy surrounding publisher creation of DOI-like strings for business operations was taken up in an interesting posting on the CrossRef blog, "DOI like strings and fake DOIs".
+Note: The faux DOI used in this example was assigned by an established publisher to detect and block unauthorized access to their system. The controversy surrounding publisher creation of DOI-like strings for business operations was taken up in an interesting posting on the CrossRef blog, [DOI like strings and fake DOIs] (http://blog.crossref.org/2016/06/doi-like-strings-and-fake-dois.html).
 
 ### Exercise 1A(4). Retrieve the landing page for a DOI object and "pretty print" the output to something easier on the eyes
 
@@ -149,7 +149,7 @@ This exercise applies various UNIX commands to answer the question "What types o
 `$ curl https://api.datacite.org/work-types > works_raw.txt`
 `$ head works_raw.txt`
 `$ cat works_raw.txt | tr ',' '\012' > works_clean.txt`
-`$ cat works_clean.txt | grep "title" | cut –d : -f 3 > works_final.txt`
+`$ cat works_clean.txt | grep "title" | cut -d : -f 3 > works_final.txt`
 `$ cat works_final.txt | wc -l`
 
 ---
