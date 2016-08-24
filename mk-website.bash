@@ -9,7 +9,7 @@ function checkApp() {
 }
 
 function softwareCheck() {
-    for APP_NAME in shorthand; do
+    for APP_NAME in $@; do
         checkApp $APP_NAME
     done
 }
@@ -19,11 +19,11 @@ function mkPage () {
     content="$2"
     html="$3"
 
-    echo "Rendering $html from $content and $nav"
-    shorthand \
-        -e "{{navContent}} :import-markdown: $nav" \
-        -e "{{pageContent}} :import-markdown: $content" \
-        page.shorthand > $html
+    echo "Rendering $html"
+    mkpage \
+        "nav=$nav" \
+        "content=$content" \
+        page.tmpl > $html
 }
 
 function mkSite() {
@@ -53,7 +53,7 @@ function mkSite() {
 }
 
 echo "Checking necessary software is installed"
-softwareCheck
+softwareCheck mkpage
 echo "Generating website"
 mkSite "."
 

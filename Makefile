@@ -1,7 +1,7 @@
 #
 # Simple Makefile for generate website with shorthand and md2slides
 #
-build: README.md page.shorthand
+build: README.md page.tmpl
 	./mk-website.bash
 
 save:
