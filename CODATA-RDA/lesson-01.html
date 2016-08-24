@@ -242,7 +242,7 @@ This exercise applies various UNIX commands to answer the question "What types o
 $ curl https://api.datacite.org/work-types > works_raw.txt
 $ head works_raw.txt
 $ cat works_raw.txt | tr ',' '\012' > works_clean.txt
-$ cat works_clean.txt | grep "title" | cut –d : -f 3 > works_final.txt
+$ cat works_clean.txt | grep "title" | cut -d : -f 3 > works_final.txt
 $ cat works_final.txt | wc -l
 </pre>
 
