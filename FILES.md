@@ -1,7 +1,7 @@
 
 # Description of files and organization
 
-+ \*.shorthand are [shorthand](https://rsdoiel.github.io/shorthand) templates for render markdown content into specific HTML pages
++ \*.tmpl are [mkpage](https://caltechlibrary.github.io/mkpage) templates for render markdown content into specific HTML pages
 + \*.bash are scripts for managing website
 + \*.md are our markdown files
 + css/\* holds our website css files (lesssons or subfolder may have their own css associated with them)
@@ -13,5 +13,5 @@
 The following files have a special handline
 
 + *README.md* becomes *index.html*
-+ *nav.md* never renders its own html file as it is included by the shorthand template
++ *nav.md* never renders its own html file as it is included by the mkpage template
 
