@@ -26,6 +26,30 @@ This is includes content in the <a href="CODATA-RDA/">CODATA-RDA</a> folder.</p>
 
 <h2>One time setup</h2>
 
+<h3>Prerequisites</h3>
+
+<p>This website is built using several command line tools developed at Caltech. They are</p>
+
+<ul>
+<li><a href="https://caltechlibrary.github.io/mkpage">mkpage</a> - renders the website from Markdown files using template page.tmpl
+
+<ul>
+<li><a href="https://caltechlibrary.github.io/mkpage/install.html">installation instructions</a></li>
+</ul></li>
+<li><a href="https://caltechlibrary.github.io/md2slides">md2slides</a> - (optional) is a markdown to HTML slide converter
+
+<ul>
+<li><a href="https://caltechlibrary.github.io/md2slides/install.html">installation instructions</a></li>
+</ul></li>
+<li><a href="https://caltechlibrary.github.io/ws">ws</a> - (optional) is a static web server you can use to view your site while you&rsquo;re writing it
+
+<ul>
+<li><a href="https://caltechlibrary.github.io/ws/install.html">installation instructions</a></li>
+</ul></li>
+</ul>
+
+<p>Installation instructions for these utilities are available for Mac OS X, Windows 10, Ubuntu/Linux and Raspbian/Linux operating systems.</p>
+
 <h3>On Windows</h3>
 
 <p>If you are on a Windows machine running Bash that comes with Git clone this repository</p>
@@ -34,20 +58,17 @@ This is includes content in the <a href="CODATA-RDA/">CODATA-RDA</a> folder.</p>
 <li>Start Bash</li>
 <li>clone this repository</li>
 <li>change to the repository directory</li>
-<li>&ldquo;source&rdquo; the etc/setup-windows.bash</li>
-<li>and you&rsquo;re ready to work</li>
+<li>and you&rsquo;re ready to regenerate the website</li>
 </ul>
 
 <p>These are the command I&rsquo;d enter in Bash</p>
 
 <pre><code class="language-shell">    git clone https://github.com/caltechlibrary/AuthorCarpentry
     cd AuthorCarpentry
-    . etc/setup-windows.bash
+    ./mk-website.bash
 </code></pre>
 
-<p>NOTE: notice the space after the period the last line. This is the only command where you need that idiom in Bash.</p>
-
-<p>You should now be able run the <em>shorthand</em> command and the <em>./mk-website.bash</em> script should work.</p>
+<p>You should now be able run the <a href="https://caltechlibrary.github.io/mkpage">mkpage</a> command using the <em>./mk-website.bash</em> script should work.</p>
 
 <h3>On a Mac</h3>
 
@@ -55,20 +76,17 @@ This is includes content in the <a href="CODATA-RDA/">CODATA-RDA</a> folder.</p>
 <li>Open the Terminal application</li>
 <li>clone this repository</li>
 <li>change to the repository folder</li>
-<li>&ldquo;source&rdquo; the <em>etc/setup-macosx.bash</em> file</li>
-<li>and you&rsquo;re ready to work</li>
+<li>and you&rsquo;re ready to regenerate the website</li>
 </ul>
 
 <p>These are the command I enter after starting Terminal</p>
 
 <pre><code class="language-shell">    git clone https://github.com/caltechlibrary/AuthorCarpentry
     cd AuthorCarpentry
-    . etc/setup-mac.bash
+    ./mk-website.bash
 </code></pre>
 
-<p>NOTE: notice the space after the period the last line. This is the only command where you need that idiom in Bash.</p>
-
-<p>You should now be able run the <em>shorthand</em> command and the <em>./mk-website.bash</em> script should work.</p>
+<p>You should now be able run the <a href="https://caltechlibrary.github.io/mkpage">mkpage</a> command and the <em>./mk-website.bash</em> script should work.</p>
 
 <hr />
 
@@ -77,59 +95,58 @@ This is includes content in the <a href="CODATA-RDA/">CODATA-RDA</a> folder.</p>
 <p>Once you have your repositories cloned on going authoring is a little easier. When you start
 your Bash session you source the appropriate setup file and then you can get to work.</p>
 
-<h3>Windows workflow</h3>
+<h3>Workflow for Mac, Windows and Linux</h3>
 
 <p>You need to let Bash know where to find <em>shorthand</em>. The easiest way is</p>
 
 <ol>
-<li>Start Bash</li>
+<li>Start Bash (on a Mac you launch the &ldquo;Terminal&rdquo; application)</li>
 <li>Change to your repository directory</li>
-<li>Source the etc/setup-windows.bash file</li>
 </ol>
 
 <p>Then you&rsquo;re in the repository directory in Bash do</p>
 
 <pre><code class="language-shell">    cd AuthorCarpentry
-    . etc/setup-windows.bash
+    ./mk-website.bash
 </code></pre>
 
-<p>You should be ready to continue working.</p>
-
-<h3>On a Mac</h3>
-
-<p>You need to let Bash know where to find <em>shorthand</em>. The easiest way is</p>
-
-<ol>
-<li>Start Terminal</li>
-<li>Change to your repository folder in Terminal
+<p>You should be ready to continue working. The workflow is</p>
 
 <ul>
-<li>e.g. <code>cd Sites/AuthorCarpentry</code> if that is where you put the repository</li>
+<li>edit markdown files in a text editor</li>
+<li>run
+
+<ul>
+<li><code>./mk-website.bash</code></li>
 </ul></li>
-<li>Source the etc/setup-windows.bash file</li>
-</ol>
+<li>check the HTML (e.g. view them in your web browser)
 
-<p>Then you&rsquo;re in the repository folder in Bash do</p>
+<ul>
+<li>the <a href="https://caltechlibrary.github.io/ws">ws</a> web server is a convient way to make this happen</li>
+<li>you can also just do a &ldquo;file open&rdquo; from your web browser on the individual HTML files</li>
+</ul></li>
+<li>make edits, rerun
 
-<pre><code class="language-shell">    cd AuthorCarpentry
-    . etc/setup-macosx.bash
-</code></pre>
+<ul>
+<li><code>./mk-website.bash</code></li>
+<li>repeat steps as needed</li>
+</ul></li>
+</ul>
 
-<p>You should be ready to continue working.</p>
+<p>When you have the site the way you want it you can run the <code>./publish.bash</code> script. This copies updates the contents of the <em>gh-pages</em> branch based on the current <em>master</em> branch.</p>
 
-<hr />
+<p>If you&rsquo;ve forked the AuthorCarpentry repository from <a href="https://github.com/caltechlibrary/AuthorCarpentry">https://github.com/caltechlibrary/AuthorCarpentry</a> you can submit a pull request.</p>
 
-<h2>Workflow</h2>
+<h4>Workflow steps</h4>
 
 <ol>
-<li>Source your setup file (only do this once) to setup your Bash environment</li>
 <li>Create, write and edit your content in Markdown files</li>
 <li>For each level of the website you can customize the navigation links in <em>nav.md</em> as need
 
 <ul>
 <li>e.g. add additional links to pages or lessons</li>
 </ul></li>
-<li>In the root of your repository directory run <code>./mk-website.sh</code> to re-generate all the HTML content from your markdown</li>
+<li>In the root of your repository directory run <code>./mk-website.bash</code> to re-generate all the HTML content from your markdown</li>
 <li>Check the HTML versions and see if they are what you like
 
 <ul>
@@ -149,12 +166,16 @@ your Bash session you source the appropriate setup file and then you can get to 
 
 <h2>How it works</h2>
 
-<p>The website is being generated using a tool call <a href="https://github.com/caltechlibrary/shorthand">shorthand</a>. It is a simple text label
-expander that also has a built in Markdown processor (turns your Markdown into HTML). It is very friendly for use in Bash scripts.
-We use Bash scripts (e.g. mk-website.sh) to apply <em>shorthand</em> to specific markdown files to render the desired pages.</p>
+<p>The website is being generated using a tool call <a href="https://caltechlibrary.github.io/mkpage">mkpage</a>. It renders plain text, Markdown
+and JSON using a simple template engine developed at Google.  Typical you need very few templates to build a website (this site
+needed only one). Layout is controlled from CSS as well as the markup in your template. <em>mkpage</em> is very friendly to Bash scripts
+and <code>./mk-website.bash</code> is a good example of using a <em>mkpage</em> and common Unix command in a simple Bash script to render a
+multi-directory website.</p>
 
-<p>Additional this repository comes with Windows and Mac OS X compiled versions of <a href="https://github.com/caltechlibrary/ws">ws</a>. This is
-a light weight webserver suitable to use during website editing to see how your changes look in a web browser.</p>
+<p>When you commit and push your changes to Github&rsquo;s gh-pages branch then your website hosted at Github updates. This lets you iterate
+easily working on the website without disruption to the public. When everything checks out the way you want, push your changes to
+the <em>master</em> branch, pull <em>master</em> into the <em>gh-pages</em> branch and push those up to Github&rsquo;s <em>gh-pages</em> branch. There is an easy
+to use script call <code>./publish.bash</code> so you don&rsquo;t have to remember those details.</p>
 
 </section>
 
