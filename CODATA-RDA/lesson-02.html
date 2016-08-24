@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Caltech Library's Digital Library Development Sandbox</title>
+    <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<header>
+<a href="http://library.caltech.edu"><img src="/assets/liblogo.gif" alt="Caltech Library logo"></a>
+</header>
+<nav>
+<ul>
+<li><a href="../">Author Carpentry</a></li>
+<li><a href="lesson-01.html">Lesson 1</a></li>
+<li><a href="lesson-02.html">Lesson 2</a></li>
+<li><a href="lesson-03.html]">Lesson 3</a></li>
+<li><a href="lesson-04.html]">Lesson 4</a></li>
+</ul>
+
+</nav>
+
+<section>
+<hr />
+
+<h1>LESSON TWO: OPEN CITATIONS, BibTeX FORMAT &amp; POPULATING AN ORCiD PROFILE</h1>
+
+<hr />
+
+<h2>Module 2A. Introducing Open Citations</h2>
+
+<hr />
+
+<p>Citations are a special type of research data that provide a succinct representation of a scholarly work in a standard format. Citation styles and syntaxes differ across resource types, subject disciplines and information systems, but generally have a common kernel of elements:</p>
+
+<ul>
+<li>Creator/Author(s)</li>
+<li>Title of work</li>
+<li>Publisher of work</li>
+<li>Publication date</li>
+<li>Extent/page range</li>
+<li>Locator (where to retrieve the work)</li>
+</ul>
+
+<p>Additional elements that information providers may also include in their citation data are subject descriptors, keywords, geographic or chronological coverage of the work, funder information, copyright and licensing statements, and so on.</p>
+
+<p>Citation data is critical to research and scholarship because:</p>
+
+<ol>
+<li>it permits attribution to works that an author draws on and incorporates into her own writings</li>
+<li>it allows the research community to aggregate and integrate the contributions of all contributors into a useful system for search, retrieval, tracking, assessment, and reporting.</li>
+</ol>
+
+<p>Citation data is used across the research ecosystem. Citations form the basis of publication lists on researcher websites; scholarly sharing sites and repositories; they represent the core of a professional CV; get pasted into a required section of funder applications and progress reports; and represent essential data in research information systems such as ORCiD and the DOI Registry.</p>
+
+<p>An increasing amount of citation data associated with the scholarly record is being aggregated by the DOI Registration Agencies, particularly CrossRef, because they require metadata about every digital object being deposited for DOIs. Their databases are open and accessible at the command line (as we saw in Lesson 1). Good news!</p>
+
+<p>This lesson introduces an effective and efficient &ldquo;open science&rdquo; approach for creating and maintaining a citations list that can be re-used in research-related systems such as the ORCiD Profile. It relies on the open citation format BibTeX to retrieve references from the Web and applies command line tools to combine citations from multiple sources. By maintaining a &lsquo;master&rsquo; bibliography in a consistent, open, plain text citation format, a researcher can re-purpose the citation data for reuse in different systems and services.</p>
+
+<hr />
+
+<h3>Exercise 2A. After watching a demo of the ORCiD system and a viewing researcher&rsquo;s ORCiD profile, register for your own ORCiD using their quicky and easy form.</h3>
+
+<pre><code>Point your web browser to http://orcid.org
+</code></pre>
+
+<p>Wait for the confirmation email from ORCiD to arrive in your email inbox and click on the link it contains to establish your own unique 16-digit Researcher ID &ndash; like a DOI but for people.</p>
+
+<p><strong>Welcome to the global scholarly web where you get credit for all your work and contributions using ORCiD; no one claims your works as their own; and colleagues don&rsquo;t get confused whether a given research work is yours or someone&rsquo;s with a similar or same name!</strong></p>
+
+<h3>Exercise 2B. Fetch several references from an open database on the Web and use them to compose a bibliography for use in a paper</h3>
+
+<p>Save each citation in BibTeX format for reuse (e.g., save as cite1.bib, cite2.bib, etc.)</p>
+
+<p>Concatenate the individual BibTeX citations into one bibliography using command line tools:</p>
+
+<p><code>$cat cite1.bib, cite2.bib, cite3 bib &gt; citations.bib</code>
+<code>$cat citations.bib</code></p>
+
+<p>Everything look okay? Save that concatenated file for use in the LaTeX lesson Monday night here at Trieste!</p>
+
+<h3>Exercise 2C. Add a citation to your new ORCiD Profile by uploading one of the BiBTeX files saved in Ex. 2A.</h3>
+
+<p>Once done, try ORCiD&rsquo;s own integrated tools for finding and adding citations.</p>
+
+<p>Let&rsquo;s discuss the pros and cons of uploading citations from BiBTeX files vs. relying on the ORCiD wizards.</p>
+
+<ul>
+<li>Which one would import grey literature (e.g., dissertations, tech reports)?</li>
+<li>Which one would import older articles that pre-date the emergence of the DOI standard?</li>
+<li>Which one could carry along metadata you prefer not to be included in your ORCiD profile?</li>
+</ul>
+
+<h2>REFERENCES</h2>
+
+<ul>
+<li><a href="http://blog.impactstory.org/ten-things-you-need-to-know-about-orcid-right-now/">Ten things you need to know about ORCID right now</a></li>
+<li><a href="https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management">LaTeX/Bibliography Management</a></li>
+</ul>
+
+</section>
+
+<footer>
+<span>&copy; 2016 <a href="http://library.caltech.edu/CLS_Copyright.htm">Caltech Library</a></span>
+<address>1200 E California Blvd, Mail Code 1-32, Pasadena, CA 91125-3200</address>
+<span><a href="mailto:library@caltech.edu">Email Us</a></span> 
+<span>Phone: <a href="tel:+1-626-395-3405">(626)395-3405</a></span>
+</footer>
+</body>
+</html>
