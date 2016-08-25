@@ -7,9 +7,9 @@ fi
 git commit -am snapshot
 git push origin "$BRANCH"
 git checkout gh-pages
-git pull "$BRANCH" gh-pages
+git pull origin gh-pages
 git commit -am "merge from origin gh-pages"
-git pull origin master
+git pull origin "$BRANCH"
 git commit -am "merge from origin $BRANCH"
 git push origin gh-pages
 git checkout "$BRANCH"
