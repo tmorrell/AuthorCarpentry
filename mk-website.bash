@@ -15,12 +15,14 @@ function softwareCheck() {
 }
 
 function mkPage () {
-    nav="$1"
-    content="$2"
-    html="$3"
+    title="$1"
+    nav="$2"
+    content="$3"
+    html="$4"
 
     echo "Rendering $html"
     mkpage \
+        "title=text:$title" \
         "nav=$nav" \
         "content=$content" \
         page.tmpl > $html
@@ -35,7 +37,8 @@ function mkSite() {
         FOLDER=$(dirname "$ITEM")
         if [ -f "$FOLDER/$FNAME" ] && [ "$FNAME" != "nav.md" ]; then
             EXT=${FNAME:(-3)}
-	    NAME=${FOLDER:2}
+            # Title is based on theh folder name.
+	        TITLE=${FOLDER:2}
             if [ "$EXT" = ".md" ]; then
                 HTML_FNAME=$(basename $FNAME .md).html
                 if [ "$HTML_FNAME" = "README.html" ]; then
@@ -43,9 +46,9 @@ function mkSite() {
                 fi
                 # Prefer the local directory's nav.md to the root level one.
                 if [ -f "$FOLDER/nav.md" ]; then
-                    mkPage "$FOLDER/nav.md" "$FOLDER/$FNAME" "$FOLDER/$HTML_FNAME" 
+                    mkPage "$TITLE" "$FOLDER/nav.md" "$FOLDER/$FNAME" "$FOLDER/$HTML_FNAME" 
                 else 
-                    mkPage "nav.md" "$FOLDER/$FNAME" "$FOLDER/$HTML_FNAME" 
+                    mkPage "$TITLE" "nav.md" "$FOLDER/$FNAME" "$FOLDER/$HTML_FNAME" 
                 fi
                 git add "$FOLDER/$FNAME" "$FOLDER/$HTML_FNAME"
             fi
