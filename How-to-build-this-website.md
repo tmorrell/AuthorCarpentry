@@ -59,7 +59,9 @@ You can use Robert's simple web server ws.  Follow the installation instructions
 
 If you want to include your changes in the main AuthorCarpentry repository from https://github.com/caltechlibrary/AuthorCarpentry, you can submit a pull request.  Go to your personal github page https://github.com/*your_github_username*/AuthorCarpentry and click the "New Pull Request" button.  You're requesting the changes to be put into in the base branch (the place you want the changes applied - in this case caltechlibrary) from the compare head branch (where the changes are - your personal repository).  You'll see all the changed files in the boxes below.  Write a title and description of the changes and click "Submit Pull Request".  This request will be recorced and a library staff member can authorize the changes.
 
-#### Workflow steps
+---
+
+## Summary workflow steps
 
 1. Create, write and edit your content in Markdown files
 2. For each level of the website you can customize the navigation links in *nav.md* as need
@@ -73,19 +75,9 @@ If you want to include your changes in the main AuthorCarpentry repository from 
 8. When you're ready to publish run the publish script
     + ./publish.bash
 
-
----
-
 ## How it works
 
-The website is being generated using a tool call [mkpage](https://caltechlibrary.github.io/mkpage). It renders plain text, Markdown 
-and JSON using a simple template engine developed at Google.  Typical you need very few templates to build a website (this site 
-needed only one). Layout is controlled from CSS as well as the markup in your template. *mkpage* is very friendly to Bash scripts
-and `./mk-website.bash` is a good example of using a *mkpage* and common Unix command in a simple Bash script to render a 
-multi-directory website.
+The website is being generated using a tool call [mkpage](https://caltechlibrary.github.io/mkpage). It renders plain text, Markdown and JSON using a simple template engine developed at Google.  Typical you need very few templates to build a website (this site needed only one). Layout is controlled from CSS as well as the markup in your template. *mkpage* is very friendly to Bash scripts and `./mk-website.bash` is a good example of using a *mkpage* and common Unix command in a simple Bash script to render a multi-directory website.
 
-When you commit and push your changes to Github's gh-pages branch then your website hosted at Github updates. This lets you iterate
-easily working on the website without disruption to the public. When everything checks out the way you want, push your changes to 
-the *master* branch, pull *master* into the *gh-pages* branch and push those up to Github's *gh-pages* branch. There is an easy
-to use script call `./publish.bash` so you don't have to remember those details.
+When you commit and push your changes to Github's gh-pages branch then your website hosted at Github updates. This lets you iterate easily working on the website without disruption to the public. When everything checks out the way you want, push your changes to the *master* branch, pull *master* into the *gh-pages* branch and push those up to Github's *gh-pages* branch. There is an easy to use script call `./publish.bash` so you don't have to remember those details.
 
