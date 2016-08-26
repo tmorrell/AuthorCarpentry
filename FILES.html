@@ -1,19 +1,17 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Caltech Library's Digital Library Development Sandbox</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
 <header>
-<a href="/"><img src="/assets/orangebooks-logo.png" alt="Caltech Library logo"></a>
-<h1>Caltech Library</h1>
+<a href="http://library.caltech.edu"><img src="/assets/liblogo.gif" alt="Caltech Library logo"></a>
 </header>
 <nav>
 <ul>
 <li><a href="./">Author Carpentry</a></li>
-<li><a href="CODATA-RDA/">CODATA-RDA</a></li>
+<li><a href="CODATA-RDA">CODATA-RDA Lessons</a></li>
 <li><a href="contributing.html">Contribute</a></li>
 <li><a href="How-to-build-this-website.html">How to build this website</a></li>
 </ul>
@@ -24,7 +22,7 @@
 <h1>Description of files and organization</h1>
 
 <ul>
-<li>*.shorthand are <a href="https://rsdoiel.github.io/shorthand">shorthand</a> templates for render markdown content into specific HTML pages</li>
+<li>*.tmpl are <a href="https://caltechlibrary.github.io/mkpage">mkpage</a> templates for render markdown content into specific HTML pages</li>
 <li>*.bash are scripts for managing website</li>
 <li>*.md are our markdown files</li>
 <li>css/* holds our website css files (lesssons or subfolder may have their own css associated with them)</li>
@@ -38,18 +36,16 @@
 
 <ul>
 <li><em>README.md</em> becomes <em>index.html</em></li>
-<li><em>nav.md</em> never renders its own html file as it is included by the shorthand template</li>
+<li><em>nav.md</em> never renders its own html file as it is included by the mkpage template</li>
 </ul>
 
 </section>
 
 <footer>
-<span><h1><A href="http://caltech.edu">Caltech</a></h1></span>
-<span>&copy; 2015 <a href="http://library.caltech.edu/CLS_Copyright.htm">Caltech library</a></span>
-<address>1200 E California Blvd, Mail Code 1-32, Pasadena, CA 91125-3200</address> 
+<span>&copy; 2016 <a href="http://library.caltech.edu/CLS_Copyright.htm">Caltech Library</a></span>
+<address>1200 E California Blvd, Mail Code 1-32, Pasadena, CA 91125-3200</address>
+<span><a href="mailto:library@caltech.edu">Email Us</a></span> 
 <span>Phone: <a href="tel:+1-626-395-3405">(626)395-3405</a></span>
-<span><a href="mailto:library@caltech.edu">Email Us</a></span>
-<a class="cl-hide" href="sitemap.xml">Site Map</a>
 </footer>
 </body>
 </html>

@@ -3,22 +3,14 @@
 
 Table of contents
 
-+ [lessons-01](./lesson-01.md)
-    + Module 1A. What are Digital Object Identifiers and Why Do They Matter ?
++ [Lesson 1: Introducing Digital Object Identifiers (DOIs) and their value for Researchers](lesson-01.html)
+    + Module 1A. What are Digital Object Identifiers?
     + Module 1B. Anatomy of the DOI System?
     + Module 1C. Metadata associated with DOIs
-    + Module 1D. How do I get a Digital Object Identifier (DOI) for my material?
+    + Module 1D. How do I get a Digital Object Identifier (DOI) for my research contributions ?
++ [Lesson 2: Establishng Researcher Identity with ORCiD](lesson-02.html)
++ [Lesson 3: Scientitif Authoring in LaTeX and BibTeX](lesson-03.html)
++ [Lesson 4: Sharing Research Openly with Creative Commons](CC_packet_final.pdf)
 
 
-## NOTE: how to build list of '##' headers from lesson-01.md
 
-In the example I used grep to find the '##' lines, then sed to clean up some text, and finally loop
-through each line and display the results with a '   + ' prefix.
-
-```shell
-    grep -E '^##' lesson-01.md | \
-    sed -e "s/\*//g" -e "s/##//g" -e "s/^\s|\s$//" | \
-    while read LINE; do 
-        echo "    + $LINE"; 
-    done
-```
