@@ -10,6 +10,7 @@ git checkout gh-pages
 git pull origin gh-pages
 git commit -am "merge from origin gh-pages"
 git pull origin "$BRANCH"
+./mk-website.bash
 git commit -am "merge from origin $BRANCH"
 git push origin gh-pages
 git checkout "$BRANCH"

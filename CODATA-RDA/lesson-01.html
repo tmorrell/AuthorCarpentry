@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Caltech Library's Digital Library Development Sandbox</title>
-    <link rel="stylesheet" href="/css/site.css">
+    <title>Caltech Library's Digital Library Development Sandbox </title>
+    <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
 <header>
-<a href="http://library.caltech.edu"><img src="/assets/liblogo.gif" alt="Caltech Library logo"></a>
+<a href="http://library.caltech.edu"><img src="assets/liblogo.gif" alt="Caltech Library logo"></a>
 </header>
 <nav>
 <ul>
@@ -20,177 +20,6 @@
 </nav>
 
 <section>
-<hr />
-
-<h1><strong>Module 1A. What are Digital Object Identifiers and Why Do They Matter to Researchers ?</strong></h1>
-
-<hr />
-
-<h2>Introduction</h2>
-
-<p>TESTING Digital Object Identifiers (DOIs) are unique names assigned to research outputs and other information resources that are represented in some way on the Internet. DOIs represent an established international information standard, ISO 26324:2012. The DOI distinguishes a given research object from other works, including other versions of the same intellectual material. The DOI also provides a persistent link to that resource on the Internet. DOIs are actionable: when put in URL form (<a href="http://dx.doi.org/{DOI">http://dx.doi.org/{DOI</a>}, the DOI automatically redirects to a landing page that offers information about the research object and often a link to the resource itself.</p>
-
-<p>The DOI is NOT by itself a seal of quality. Yet information resources that are assigned DOIs tend to be of enduring value; are likely to be used and cited by others; and are maintained by a publisher or other information provider who is committed to curating and preserving the resource over time. Examples of research-related information resources assigned DOIs include journal articles, curated datasets, theses, conference papers, pre-prints, technical reports, and books.</p>
-
-<p>A DOI is considered a persistent identifier because it reliably resolves to a human- and machine-readable landing page representing the information resource. But the DOI itself is not a guarantee that the dataset or paper is available via Open Access: rather, the DOI resolves to an Open Access landing page that may (or may not) permit linking through to the desired object. Whether or not a user can access the full content depends on various circumstances unrelated to the DOI system: format of the resource, restrictions and conditions governing access; authentication requirements; software compatibility; etc.</p>
-
-<p>Nonetheless, the metadata associated with the DOI is rich enough to provide useful data for researchers. DOI metadata can tell alot about what has been published, who has published it, under what conditions (with what funding, whether the work is available open access, whether the work has been updated since publication, and more.)</p>
-
-<p>This lesson explores the anatomy of a DOI, how it is generated, what metadata is associated, and how to get a DOI for a new work.</p>
-
-<hr />
-
-<h3>Exercise 1A(1). Demonstrate that a DOI redirects to a landing page for an associated information resource.</h3>
-
-<p><code>$ curl -s -S http://dx.doi.org/10.1103/PhysRev.109.193</code></p>
-
-<p><code>$ curl -s -S http://dx.doi.org/10.7935/K5H41PBP</code></p>
-
-<p><em>Whose websites did the redirects for each DOI take you to?</em></p>
-
-<h3>Exercise 1A(2). Resolve a DOI to a landing page to confirm its validity, and determine the title of the associated digital object.</h3>
-
-<p><code>$ curl  -s -S -L http://dx.doi.org/10.1103/PhysRevLett.116.061102 &gt;redirect1.txt</code></p>
-
-<p><code>$ grep &quot;citation_title&quot; redirect1.txt</code></p>
-
-<p><code>$ curl -s -S -L http://dx.doi.org/10.7935/K5H41PBP &gt;redirect2.txt</code></p>
-
-<p><code>$ grep &quot;title&quot; redirect2.txt</code></p>
-
-<h3>Exercise 1A(3). Determine if a &lsquo;DOI-style string&rsquo; is a valid DOI</h3>
-
-<p><code>$ curl -s -S -L http://dx.doi.org/10.5454/JPSv1i220161014 | grep &quot;title&quot;</code></p>
-
-<p>Note: The faux DOI used in this example was assigned by an established publisher to detect and block unauthorized access to their system. The controversy surrounding publisher creation of DOI-like strings for business operations was taken up in an interesting posting on the CrossRef blog, <a href="http://blog.crossref.org/2016/06/doi-like-strings-and-fake-dois.html">DOI like strings and fake DOIs</a>.</p>
-
-<h3>Exercise 1A(4). Retrieve the landing page for a DOI object and &ldquo;pretty print&rdquo; the output to something easier on the eyes</h3>
-
-<p><code>$ curl -s -S -L http://dx.doi.org/10.7935/K5MW2F23 &gt;ex1A4.txt</code>
-<code>$ less ex1A4.txt</code></p>
-
-<p>What format is the landing page provided in?</p>
-
-<p>To make the retrieved data easier to read, remove the markup using the the Unix stream editor sed. A regular expression is used to represent all unwanted content between html brackets.</p>
-
-<p><code>$ sed -e 's/&lt;[^&gt;]*&gt;//g' ex1A4.txt &gt; ex1A4_pretty.txt</code></p>
-
-<hr />
-
-<h2>Module 1B. Anatomy of the DOI System?</h2>
-
-<p>The <a href="https://www.doi.org/">International DOI System</a> is the overall infrastructure by which Digital Object Identifiers are assigned, registered, resolved, and associated with valuable metadata including citation, availability of full text, funder information, licensing information, and more. The following components of the DOI System together make it work:</p>
-
-<ul>
-<li>The <a href="http://www.doi.org/doi_handbook/7_IDF.html">International DOI Federation (IDF)</a> is responsible for the overall governance of the system. IDF is a not-for-profit membership organization that oversees the operations of the federation of Registration Agencies which provide Digital Object Identifier (DOI) services and registration. IDF is also the registration authority for the ISO standard (ISO 26324) for the DOI system.</li>
-<li><a href="https://www.doi.org/registration_agencies.html">Registration Agencies (RAs)</a> provide services to Registrants (or Members) — allocating DOI name prefixes, registering DOI names and providing the necessary infrastructure to allow Registrants to declare and maintain metadata and state data. Each RA must follow basic protocols and standards of the DOI sytem, including a minimum metadata standard known as the DOI kernel. Yet each RA has the freedom to implement additional metadata standards, track a range of information about a given DOI resource, and offer public services for querying their databases. As an example, the Registration Agency CrossRef registers a range of metadata about scholarly resources including funding data, license associated with the digital object, author data including ORCiD numbers, and more &ndash; see April Ondis&rsquo; CrossRef Blog posting &ldquo;<a href="http://blog.crossref.org/2016/06/beyond-the-doi-to-richer-metadata.html">Beyond the DOI to richer metadata</a>&rdquo; for more info about their services.</li>
-<li>Registrants (or Members) of a given Registration Agency register DOIs for information resources under their responsibility. Registrants include publishers, data centers, universities, libraries, university presses, and open data sharing repositories such as Zenodo. Registrants must follow the policies and procedures established by the RA in order to register DOIs. Each Registrant is given a unique member code that uniquely distinguishes them amongst all members of the RA. Each member also receives one or more unique prefix codes that forms the first part of the DOI sequence. The Registrant then uses the suffix portion of the DOI sequence to assign unique names to each resource they manage.</li>
-</ul>
-
-<p>The metadata associated with the DOI is often rich enough to provide useful data for a researcher. This lesson and the next look at the array of useful public data associated with DOIs.</p>
-
-<p><img src="../Figure 1.jpg" alt="Anatomy of a Doi" /></p>
-
-<hr />
-
-<h3>Exercise 1B(1). Demonstrate that a DOI redirects to the landing page for an associated digital object and retrieve the content of the landing page.</h3>
-
-<p><code>$ curl -s -S -L http://dx.doi.org/10.1103/PhysRev.109.193 &gt;landing1.txt</code></p>
-
-<p><code>$ curl -s -S -L http://dx.doi.org/10.7935/K5H41PBP &gt;landing2.txt</code></p>
-
-<p><code>$ wc landing*.txt</code></p>
-
-<h3>Exercise 1B(2). Given a DOI, determine which Registration Agency issued it</h3>
-
-<p><code>$ curl http://doi.crossref.org/doiRA/10.5170/CERN-2000-001.101</code></p>
-
-<p><code>$ curl http://doi.crossref.org/doiRA/10.5170/CERN-2000-001.101, doi.crossref.org/doiRA/10.2307/1578389</code></p>
-
-<p>Note that this handy lookup service is provided by one of the Registration Agencies, CrossRef, yet the query also works for DOIs issued by other Registration Agencies! This demonstrates that each DOI Agency provides an array of services beyond registering and maintaining DOIs for their members; savvy researchers may wish to check with more than one RA to get useful information.</p>
-
-<h3>Exercise 1B(3). Retrieve a list of DataCite members and determine the format of the data provided</h3>
-
-<p><code>$ curl -s -S http://api.datacite.org/members &gt;datacite.txt</code>
-<code>$ less datacite.txt</code></p>
-
-<p>Note that the data comes from the Datacite API in JSON format (Javascript Object Notation) &ndash; an increasingly popular metadata standard for Web services. JSON is great for machines to read, but not so much for humans! So let&rsquo;s convert it to something easier on the eyes.</p>
-
-<p><code>$ cat datacite.txt | tr ',' '\012' &gt;datacite_pretty.txt</code>
-<code>$ less datacite_pretty.txt</code></p>
-
-<hr />
-
-<h2>Module 1C. Discover the rich Metadata associated with DOIs</h2>
-
-<hr />
-
-<p>When works are registered with DOI Registration Agencies, the Registrant (publisher, data center, or other information provider) is required to submit metadata about the resource that the DOI links to. Each Registration Agency maintains its own metadata schema and establishes rules for requiring and populating the metadata elements so it is important to check their respective websites for a list of metadata elements used and whether they are mandatory or optional.</p>
-
-<p>Each Registration Agency also has the option of offering metadata look up and harvesting services that researchers may openly query. At a minimum, these services provide a basic citation for each DOI-assigned work: creator, title, publisher, publication year, and URL for the landing page of the resource. Additional metadata may include references cited in the work; funding sources; author ORCiD numbers; usage licenses attached to the work; and more.</p>
-
-<p>Researchers may search for metadata associated with DOIs in various ways. This module demonstrates how to use the API services of two Registration Agencies &ndash; CrossRef and DataCite &ndash; to query and retrieve valuable metadata about research outputs. The commands demonstrated use the process of DOI Content Negotiation to retrieve different representations of a work from the API service.</p>
-
-<h3>Exercise 1C(1). Query the Registration Agency API to retrieve a citation for a published article</h3>
-
-<p><code>$ curl http://api.crossref.org/works/http://dx.doi.org/10.1103/PhysRevLett.116.061102 &gt; cite1.txt</code></p>
-
-<p><code>$ less cite1.txt</code></p>
-
-<p>The retrieved citation is in JSON format &ndash; a popular way for presenting citation metadata that can be parsed by machines. But what if you need a different citation format for your purposes? Let&rsquo;s try Content Negotation to specify that we want the citation provided in BibTeX, a citation format used in many research information systems.</p>
-
-<p><code>$ curl -LH &quot;Accept:text/bibliography; style=bibtex&quot; http://dx.doi.org/10.1103/PhysRevLett.116.061102 &gt; cite1.bib | cat cite1.bib |tr ',' '\012'</code></p>
-
-<p>Do you know of any research information services that automatically ingest citations in BibTeX? <strong>(Cue the ORCiD system) Keep this citation in its BibTeX for Lessons 2 and 3, where we add it to a publications list to cite in a new research paper.</strong></p>
-
-<hr />
-
-<h2>Module 1D. How do I get a Digital Object Identifier (DOI) for my material?</h2>
-
-<hr />
-
-<p>You have a few options:</p>
-
-<ul>
-<li>Use the services of an existing Registrant, such as a Publisher, Library, or Data Center who is assisting you with disseminating and preserving your research outputs.</li>
-<li>Submit your work to an open research sharing system such as Zenodo who issues DOIs as part of their free services to researchers.</li>
-<li>Alternatively, your organization can join a DOI Registration Agency (RA) and become a DOI Registrant. This commitment requires an investment of time, infrastructure, funds, and human resources to ensure that registered DOIs are maintained and revised as content changes or moves. Information about becoming a DOI registration is available from the DOI Foundation.</li>
-</ul>
-
-<p>Note that Zenodo does offer an API service which can be used via Python with the Requests package installed. Advanced registration with Zenodo is necessary to obtain a authorization token to include in requests.</p>
-
-<h3>Exercise 1D(1). Quick field trip to Zenodo to explore its services</h3>
-
-<p>Point your web browser to Zenodo:</p>
-
-<pre><code>http://zenodo.org
-</code></pre>
-
-<p>Search or browse for the many different types of research resources deposited it for sharing. Are you surprised by the many different types of objects being deposited and assigned DOIs?</p>
-
-<h3>Grande Finale! Exercise 1D(2). Retrieve a list of work types that are assigned DOI&rsquo;s by DataCite</h3>
-
-<p>This exercise applies various UNIX commands to answer the question &ldquo;What types of works can be assigned DataCite DOI&rsquo;s and how many types?&rdquo;</p>
-
-<p><code>$ curl https://api.datacite.org/work-types &gt; works_raw.txt</code>
-<code>$ head works_raw.txt</code>
-<code>$ cat works_raw.txt | tr ',' '\012' &gt; works_clean.txt</code>
-<code>$ cat works_clean.txt | grep &quot;title&quot; | cut -d : -f 3 &gt; works_final.txt</code>
-<code>$ cat works_final.txt | wc -l</code></p>
-
-<hr />
-
-<h2>REFERENCES</h2>
-
-<ul>
-<li>curl documentation, 2016. <a href="https://curl.haxx.se/">https://curl.haxx.se/</a></li>
-<li>CrossRef REST API, 2016. <a href="https://github.com/CrossRef/rest-api-doc/blob/master/rest_api.md">https://github.com/CrossRef/rest-api-doc/blob/master/rest_api.md</a></li>
-<li>Beyond the DOI to richer metadata, CrossRef Blog posting of June 15, 2016 by April Ondis, <a href="http://blog.crossref.org/2016/06/beyond-the-doi-to-richer-metadata.html">http://blog.crossref.org/2016/06/beyond-the-doi-to-richer-metadata.html</a></li>
-<li>DataCite API, <a href="https://api.datacite.org/">https://api.datacite.org/</a></li>
-<li>Digital Object Identifier (DOI) Handbook, <a href="https://www.doi.org/hb.html">https://www.doi.org/hb.html</a></li>
-<li>Digital Object Identifier System and DOI Names (DOIs) Guide from Australian National Data Service, <a href="http://www.ands.org.au/guides/doi">http://www.ands.org.au/guides/doi</a></li>
-<li>DOI Citation Formatter beta, <a href="http://crosscite.org/citeproc/">http://crosscite.org/citeproc/</a></li>
-</ul>
 
 </section>
 
