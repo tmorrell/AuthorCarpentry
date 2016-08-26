@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Caltech Library's Digital Library Development Sandbox</title>
-    <link rel="stylesheet" href="/css/site.css">
+    <title>Caltech Library's Digital Library Development Sandbox </title>
+    <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
 <header>
-<a href="http://library.caltech.edu"><img src="/assets/liblogo.gif" alt="Caltech Library logo"></a>
+<a href="http://library.caltech.edu"><img src="assets/liblogo.gif" alt="Caltech Library logo"></a>
 </header>
 <nav>
 <ul>
@@ -28,6 +28,8 @@ This is includes content in the <a href="CODATA-RDA/">CODATA-RDA</a> folder.</p>
 
 <h3>Prerequisites</h3>
 
+<p>You need a (free) <a href="http://github.com">GitHub</a> account and software.  For Windows, download <a href="https://git-for-windows.github.io">Git for Windows</a>. Mac user can download <a href="https://desktop.github.com">GitHub Desktop</a> and select &ldquo;Install Command Line Tools&rdquo; under Preferences/Advanced or using a repository like macports.</p>
+
 <p>This website is built using several command line tools developed at Caltech. They are</p>
 
 <ul>
@@ -35,11 +37,6 @@ This is includes content in the <a href="CODATA-RDA/">CODATA-RDA</a> folder.</p>
 
 <ul>
 <li><a href="https://caltechlibrary.github.io/mkpage/install.html">installation instructions</a></li>
-</ul></li>
-<li><a href="https://caltechlibrary.github.io/md2slides">md2slides</a> - (optional) is a markdown to HTML slide converter
-
-<ul>
-<li><a href="https://caltechlibrary.github.io/md2slides/install.html">installation instructions</a></li>
 </ul></li>
 <li><a href="https://caltechlibrary.github.io/ws">ws</a> - (optional) is a static web server you can use to view your site while you&rsquo;re writing it
 
@@ -50,90 +47,38 @@ This is includes content in the <a href="CODATA-RDA/">CODATA-RDA</a> folder.</p>
 
 <p>Installation instructions for these utilities are available for Mac OS X, Windows 10, Ubuntu/Linux and Raspbian/Linux operating systems.</p>
 
-<h3>On Windows</h3>
+<h3>Fork the repository</h3>
 
-<p>If you are on a Windows machine running Bash that comes with Git clone this repository</p>
+<p>Go to the repository <a href="https://github.com/caltechlibrary/AuthorCarpentry">GitHub page</a> and click to fork button in the upper right corner.  This will create a copy of the repository in your personal account.  You can now feel free to make any changes and they won&rsquo;t impact the main copy.</p>
 
-<ul>
-<li>Start Bash</li>
-<li>clone this repository</li>
-<li>change to the repository directory</li>
-<li>and you&rsquo;re ready to regenerate the website</li>
-</ul>
-
-<p>These are the command I&rsquo;d enter in Bash</p>
-
-<pre><code class="language-shell">    git clone https://github.com/caltechlibrary/AuthorCarpentry
-    cd AuthorCarpentry
-    ./mk-website.bash
-</code></pre>
-
-<p>You should now be able run the <a href="https://caltechlibrary.github.io/mkpage">mkpage</a> command using the <em>./mk-website.bash</em> script should work.</p>
-
-<h3>On a Mac</h3>
+<h3>Working on the repository</h3>
 
 <ul>
-<li>Open the Terminal application</li>
-<li>clone this repository</li>
-<li>change to the repository folder</li>
-<li>and you&rsquo;re ready to regenerate the website</li>
+<li>Start Bash (On Windows go to Start, Git, Git Bash.  On Mac or Linux go to the Terminal application (installed with OS))</li>
+<li>Clone this repository
+<code>shell
+git clone https://github.com/*your_github_username*/AuthorCarpentry
+</code></li>
+<li>Change to the repository directory
+<code>shell
+cd AuthorCarpentry
+</code></li>
+<li>and you&rsquo;re ready to work - start in next section</li>
 </ul>
-
-<p>These are the command I enter after starting Terminal</p>
-
-<pre><code class="language-shell">    git clone https://github.com/caltechlibrary/AuthorCarpentry
-    cd AuthorCarpentry
-    ./mk-website.bash
-</code></pre>
-
-<p>You should now be able run the <a href="https://caltechlibrary.github.io/mkpage">mkpage</a> command and the <em>./mk-website.bash</em> script should work.</p>
-
-<hr />
 
 <h2>On going work</h2>
 
-<p>Once you have your repositories cloned on going authoring is a little easier. When you start
-your Bash session you source the appropriate setup file and then you can get to work.</p>
-
-<h3>Workflow for Mac, Windows and Linux</h3>
-
-<p>You need to let Bash know where to find <em>shorthand</em>. The easiest way is</p>
-
-<ol>
-<li>Start Bash (on a Mac you launch the &ldquo;Terminal&rdquo; application)</li>
-<li>Change to your repository directory</li>
-</ol>
-
-<p>Then you&rsquo;re in the repository directory in Bash do</p>
-
-<pre><code class="language-shell">    cd AuthorCarpentry
-    ./mk-website.bash
-</code></pre>
-
-<p>You should be ready to continue working. The workflow is</p>
+<p>Once you have your repositories cloned on going authoring is a little easier.</p>
 
 <ul>
-<li>edit markdown files in a text editor</li>
-<li>run
-
-<ul>
-<li><code>./mk-website.bash</code></li>
-</ul></li>
-<li>check the HTML (e.g. view them in your web browser)
-
-<ul>
-<li>the <a href="https://caltechlibrary.github.io/ws">ws</a> web server is a convient way to make this happen</li>
-<li>you can also just do a &ldquo;file open&rdquo; from your web browser on the individual HTML files</li>
-</ul></li>
-<li>make edits, rerun
-
-<ul>
-<li><code>./mk-website.bash</code></li>
-<li>repeat steps as needed</li>
-</ul></li>
+<li>edit markdown (.md) files in a text editor</li>
+<li>run  <code>./mk-website.bash</code>.  This will generate .html files
+You can check the .html files by doing a &ldquo;file open&rdquo; from your web browser on the individual HTML files</li>
+<li>run <code>./publish.bash</code>.  You might have to enter your github password.
+This copies updates the contents of the <em>gh-pages</em> branch based on the current <em>master</em> branch.</li>
 </ul>
 
-<p>When you have the site the way you want it you can run the <code>./publish.bash</code> script. This copies updates the contents of the <em>gh-pages</em> branch based on the current <em>master</em> branch.</p>
+<p>View your new web site at <a href="https://github.io/*your_github_username*/AuthorCarpentry">https://github.io/*your_github_username*/AuthorCarpentry</a></p>
 
 <p>If you&rsquo;ve forked the AuthorCarpentry repository from <a href="https://github.com/caltechlibrary/AuthorCarpentry">https://github.com/caltechlibrary/AuthorCarpentry</a> you can submit a pull request.</p>
 
