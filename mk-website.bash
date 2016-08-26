@@ -35,6 +35,7 @@ function mkSite() {
         FOLDER=$(dirname "$ITEM")
         if [ -f "$FOLDER/$FNAME" ] && [ "$FNAME" != "nav.md" ]; then
             EXT=${FNAME:(-3)}
+	    NAME=${FOLDER:2}
             if [ "$EXT" = ".md" ]; then
                 HTML_FNAME=$(basename $FNAME .md).html
                 if [ "$HTML_FNAME" = "README.html" ]; then
@@ -42,9 +43,9 @@ function mkSite() {
                 fi
                 # Prefer the local directory's nav.md to the root level one.
                 if [ -f "$FOLDER/nav.md" ]; then
-                    mkPage "$FOLDER/nav.md" "$FOLDER/$FNAME" "$FOLDER/$HTML_FNAME"
-                else
-                    mkPage "nav.md" "$FOLDER/$FNAME" "$FOLDER/$HTML_FNAME"
+                    mkPage "$FOLDER/nav.md" "$FOLDER/$FNAME" "$FOLDER/$HTML_FNAME" 
+                else 
+                    mkPage "nav.md" "$FOLDER/$FNAME" "$FOLDER/$HTML_FNAME" 
                 fi
                 git add "$FOLDER/$FNAME" "$FOLDER/$HTML_FNAME"
             fi
