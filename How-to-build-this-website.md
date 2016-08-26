@@ -22,7 +22,7 @@ Installation instructions are available for Mac OS X, Windows 10, Ubuntu/Linux a
 
 Go to the repository [GitHub page] (https://github.com/caltechlibrary/AuthorCarpentry) and click to fork button in the upper right corner.  This will create a copy of the repository in your personal account.  You can now feel free to make any changes and they won't impact the main copy.
 
-### Working on the repository
+## Working on the repository
 
 + Start Bash (On Windows go to Start, Git, Git Bash.  On Mac or Linux go to the Terminal application (installed with OS))
 + Clone this repository
