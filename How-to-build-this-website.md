@@ -9,89 +9,45 @@ This is includes content in the [CODATA-RDA](CODATA-RDA/) folder.
 
 ### Prerequisites
 
+You need a (free) [GitHub] (http://github.com) account and software.  For Windows, download [Git for Windows] (https://git-for-windows.github.io). Mac user can download [GitHub Desktop] (https://desktop.github.com) and select "Install Command Line Tools" under Preferences/Advanced or using a repository like macports.  
+
 This website is built using several command line tools developed at Caltech. They are
 
 + [mkpage](https://caltechlibrary.github.io/mkpage) - renders the website from Markdown files using template page.tmpl
     + [installation instructions](https://caltechlibrary.github.io/mkpage/install.html)
-+ [md2slides](https://caltechlibrary.github.io/md2slides) - (optional) is a markdown to HTML slide converter
-    + [installation instructions](https://caltechlibrary.github.io/md2slides/install.html)
 + [ws](https://caltechlibrary.github.io/ws) - (optional) is a static web server you can use to view your site while you're writing it
     + [installation instructions](https://caltechlibrary.github.io/ws/install.html)
 
 Installation instructions for these utilities are available for Mac OS X, Windows 10, Ubuntu/Linux and Raspbian/Linux operating systems.
 
+### Fork the repository
 
-### On Windows
+Go to the repository [GitHub page] (https://github.com/caltechlibrary/AuthorCarpentry) and click to fork button in the upper right corner.  This will create a copy of the repository in your personal account.  You can now feel free to make any changes and they won't impact the main copy.
 
-If you are on a Windows machine running Bash that comes with Git clone this repository
+### Working on the repository
 
-+ Start Bash
-+ clone this repository
-+ change to the repository directory
-+ and you're ready to regenerate the website
-
-These are the command I'd enter in Bash
-
++ Start Bash (On Windows go to Start, Git, Git Bash.  On Mac or Linux go to the Terminal application (installed with OS))
++ Clone this repository
 ```shell
-    git clone https://github.com/caltechlibrary/AuthorCarpentry
-    cd AuthorCarpentry
-    ./mk-website.bash
+    git clone https://github.com/*your_github_username*/AuthorCarpentry
 ```
-
-You should now be able run the [mkpage](https://caltechlibrary.github.io/mkpage) command using the *./mk-website.bash* script should work.
-
-### On a Mac
-
-+ Open the Terminal application
-+ clone this repository
-+ change to the repository folder
-+ and you're ready to regenerate the website
-
-These are the command I enter after starting Terminal
-
++ Change to the repository directory
 ```shell
-    git clone https://github.com/caltechlibrary/AuthorCarpentry
     cd AuthorCarpentry
-    ./mk-website.bash
 ```
-
-You should now be able run the [mkpage](https://caltechlibrary.github.io/mkpage) command and the *./mk-website.bash* script should work.
-
----
-
++ and you're ready to work - start in next section
 
 ## On going work
 
-Once you have your repositories cloned on going authoring is a little easier. When you start
-your Bash session you source the appropriate setup file and then you can get to work.
+Once you have your repositories cloned on going authoring is a little easier. 
 
-### Workflow for Mac, Windows and Linux
++ edit markdown (.md) files in a text editor
++ run  `./mk-website.bash`.  This will generate .html files
+You can check the .html files by doing a "file open" from your web browser on the individual HTML files
++ run `./publish.bash`.  You might have to enter your github password.
+This copies updates the contents of the *gh-pages* branch based on the current *master* branch.
 
-You need to let Bash know where to find *shorthand*. The easiest way is 
-
-1. Start Bash (on a Mac you launch the "Terminal" application)
-2. Change to your repository directory
-
-Then you're in the repository directory in Bash do
-
-```shell
-    cd AuthorCarpentry
-    ./mk-website.bash
-```
-
-You should be ready to continue working. The workflow is
-
-+ edit markdown files in a text editor
-+ run 
-    + `./mk-website.bash`
-+ check the HTML (e.g. view them in your web browser)
-    + the [ws](https://caltechlibrary.github.io/ws) web server is a convient way to make this happen
-    + you can also just do a "file open" from your web browser on the individual HTML files
-+ make edits, rerun 
-    + `./mk-website.bash`
-    + repeat steps as needed
-
-When you have the site the way you want it you can run the `./publish.bash` script. This copies updates the contents of the *gh-pages* branch based on the current *master* branch.
+View your new web site at https://github.io/*your_github_username*/AuthorCarpentry
 
 If you've forked the AuthorCarpentry repository from https://github.com/caltechlibrary/AuthorCarpentry you can submit a pull request.
 
