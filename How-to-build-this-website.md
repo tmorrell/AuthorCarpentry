@@ -3,7 +3,7 @@
 # How to build this website
 
 These are instructions for generate [caltechlibrary.github.io/AuthorCarpentry](https://caltechlibrary.github.io/AuthorCarpentry) website.
-This is includes content in the [CODATA-RDA](CODATA-RDA/) folder.
+This includes content in the [CODATA-RDA](CODATA-RDA/) folder.
 
 ## One time setup
 
@@ -15,10 +15,8 @@ This website is built using several command line tools developed at Caltech. The
 
 + [mkpage](https://caltechlibrary.github.io/mkpage) - renders the website from Markdown files using template page.tmpl
     + [installation instructions](https://caltechlibrary.github.io/mkpage/install.html)
-+ [ws](https://caltechlibrary.github.io/ws) - (optional) is a static web server you can use to view your site while you're writing it
-    + [installation instructions](https://caltechlibrary.github.io/ws/install.html)
 
-Installation instructions for these utilities are available for Mac OS X, Windows 10, Ubuntu/Linux and Raspbian/Linux operating systems.
+Installation instructions are available for Mac OS X, Windows 10, Ubuntu/Linux and Raspbian/Linux operating systems.
 
 ### Fork the repository
 
@@ -46,10 +44,20 @@ Once you have your repositories cloned on going authoring is a little easier.
 You can check the .html files by doing a "file open" from your web browser on the individual HTML files
 + run `./publish.bash`.  You might have to enter your github password.
 This copies updates the contents of the *gh-pages* branch based on the current *master* branch.
++ You can put .md files into directories and `mk-website.bash` will find them.  However, for the moment you need to copy `css/` and `assets/` into the directory for the site to render properly (we'll hopefully make this automatic in the future)
 
-View your new web site at https://github.io/*your_github_username*/AuthorCarpentry
+View your new web site at https://*your_github_username*.github.io/AuthorCarpentry/ 
 
-If you've forked the AuthorCarpentry repository from https://github.com/caltechlibrary/AuthorCarpentry you can submit a pull request.
+##Don't have an internet connection or want to view your changes privatly?
+
+You can use Robert's simple web server ws.  Follow the installation instructions below.
+
++ [ws](https://caltechlibrary.github.io/ws) - (optional) is a static web server you can use to view your site while you're writing it
+    + [installation instructions](https://caltechlibrary.github.io/ws/install.html)
+
+##Sharing your changes with the world
+
+If you want to include your changes in the main AuthorCarpentry repository from https://github.com/caltechlibrary/AuthorCarpentry, you can submit a pull request.  Go to your personal github page https://github.com/*your_github_username*/AuthorCarpentry and click the "New Pull Request" button.  You're requesting the changes to be put into in the base branch (the place you want the changes applied - in this case caltechlibrary) from the compare head branch (where the changes are - your personal repository).  You'll see all the changed files in the boxes below.  Write a title and description of the changes and click "Submit Pull Request".  This request will be recorced and a library staff member can authorize the changes.
 
 #### Workflow steps
 
