@@ -75,12 +75,25 @@ This includes content in the <a href="CODATA-RDA/">CODATA-RDA</a> folder.</p>
 <li>edit markdown (.md) files in a text editor</li>
 <li>run  <code>./mk-website.bash</code>.  This will generate .html files
 You can check the .html files by doing a &ldquo;file open&rdquo; from your web browser on the individual HTML files</li>
-<li>run <code>./publish.bash</code>.  You might have to enter your github password.
-This copies updates the contents of the <em>gh-pages</em> branch based on the current <em>master</em> branch.</li>
-<li>You can put .md files into directories and <code>mk-website.bash</code> will find them.  However, for the moment you need to copy <code>css/</code> and <code>assets/</code> into the directory for the site to render properly (we&rsquo;ll hopefully make this automatic in the future)</li>
+<li>run <code>./publish.bash</code>.  You might have to enter your github password or confirm a merge.  Typing the following should work in most cases.</li>
 </ul>
 
+<pre><code class="language-shell">    :wq
+</code></pre>
+
+<p>This copies updates the contents of the <em>gh-pages</em> branch based on the current <em>master</em> branch.
++ You can put .md files into directories and <code>mk-website.bash</code> will find them.</p>
+
 <p>View your new web site at https://<em>your_github_username</em>.github.io/AuthorCarpentry/</p>
+
+<h2>Updating with new changes from the library</h2>
+
+<p>When the library makes changes to the repository, you may want to update your personal copy.  Go to <a href="https://github.com/*your_github_username*/AuthorCarpentry">https://github.com/*your_github_username*/AuthorCarpentry</a> and click &ldquo;New Pull Request&rdquo;.  Then select the &ldquo;compare across forks&rdquo; link in the upper left.  You&rsquo;ll want to set the base fork as <em>your_github_username</em>/AuthorCarpentry (what we&rsquo;re updating) and the head fork as caltechlibrary/AuthorCarpentry (where we&rsquo;re getting the changes from).  Click &ldquo;Create pull request&rdquo; two times to submit the request.  Then you&rsquo;ll have to accept the pull request by clicking the green button twice again.  The only place you&rsquo;ll run into problems is if files are in conflict between the two versions-in this case you&rsquo;ll have to manually inspect and resolve the confilict.</p>
+
+<p>To update the copy on your local machine, type in your local terminal in the AuthorCarpentry directory</p>
+
+<pre><code class="language-shell">    git pull origin master
+</code></pre>
 
 <h2>Don&rsquo;t have an internet connection or want to view your changes privately?</h2>
 
