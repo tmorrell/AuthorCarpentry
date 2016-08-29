@@ -50,8 +50,10 @@ Once you have your repositories cloned on going authoring is a little easier.
 
 + edit markdown (.md) files in a text editor
 + run  `./mk-website.bash`.  This will generate .html files
+
 You can check the .html files by doing a "file open" from your web browser on the individual HTML files
-+ run `./publish.bash`.  You might have to enter your github password or confirm a merge.  Typing ':wq' should be sufficient to confirm a merge in most cases.
+
++ run `./publish.bash`.  You might have to enter your github password or confirm a merge.  Typing `:wq` should be sufficient to confirm a merge in most cases.
 
 This copies updates the contents of the *gh-pages* branch based on the current *master* branch.
 
@@ -63,7 +65,14 @@ View your new web site at https://*your_github_username*.github.io/AuthorCarpent
 
 ## Updating with new changes from the library
 
-When the library makes changes to the repository, you may want to update your personal copy.  Go to https://github.com/*your_github_username*/AuthorCarpentry and click "New Pull Request".  Then select the "compare across forks" link in the upper left.  You'll want to set the base fork as *your_github_username*/AuthorCarpentry (what we're updating) and the head fork as caltechlibrary/AuthorCarpentry (where we're getting the changes from).  Click "Create pull request" two times to submit the request.  Then you'll have to accept the pull request by clicking the green button twice again.  The only place you'll run into problems is if files are in conflict between the two versions-in this case you'll have to manually inspect and resolve the confilict.
+When the library makes changes to the repository, you may want to update your personal copy.  
+
++ Go to https://github.com/*your_github_username*/AuthorCarpentry and click "New Pull Request".  
++ Select the "compare across forks" link in the upper left.  You'll want to set the base fork as *your_github_username*/AuthorCarpentry (what we're updating) and the head fork as caltechlibrary/AuthorCarpentry (where we're getting the changes from).  
++ Click "Create pull request" two times to submit the request.  
++ Accept the pull request by clicking the green button twice again.  
+
+The only place you'll run into problems is if files are in conflict between the two versions-in this case you'll have to manually inspect and resolve the confilict.
 
 To update the copy on your local machine, type in your local terminal in the AuthorCarpentry directory
 
@@ -84,7 +93,9 @@ You can use Robert's simple web server ws.  Follow the installation instructions
 
 ## Sharing your changes with the world
 
-If you want to include your changes in the main AuthorCarpentry repository from https://github.com/caltechlibrary/AuthorCarpentry, you can submit a pull request.  Go to your personal github page https://github.com/*your_github_username*/AuthorCarpentry and click the "New Pull Request" button.  You're requesting the changes to be put into in the base branch (the place you want the changes applied - in this case caltechlibrary) from the compare head branch (where the changes are - your personal repository).  You'll see all the changed files in the boxes below.  Write a title and description of the changes and click "Submit Pull Request".  This request will be recorded and a library staff member can authorize the changes.
+If you want to include your changes in the main AuthorCarpentry repository from https://github.com/caltechlibrary/AuthorCarpentry, you can submit a pull request.  
++ Go to your personal github page https://github.com/*your_github_username*/AuthorCarpentry and click the "New Pull Request" button.  You're requesting the changes to be put into in the base branch (the place you want the changes applied - in this case caltechlibrary) from the compare head branch (where the changes are - your personal repository).  You'll see all the changed files in the boxes below.  
++ Write a title and description of the changes and click "Submit Pull Request".  This request will be recorded and a library staff member can authorize the changes.
 
 ---
 
