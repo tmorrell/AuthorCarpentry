@@ -26,10 +26,13 @@ Go to the repository [GitHub page] (https://github.com/caltechlibrary/AuthorCarp
 
 + Start Bash (On Windows go to Start, Git, Git Bash.  On Mac or Linux go to the Terminal application (installed with OS))
 + Clone this repository
+
 ```shell
     git clone https://github.com/*your_github_username*/AuthorCarpentry
 ```
+
 + Change to the repository directory
+
 ```shell
     cd AuthorCarpentry
 ```
