@@ -26,7 +26,9 @@ This includes content in the <a href="CODATA-RDA/">CODATA-RDA</a> folder.</p>
 
 <h2>One time setup</h2>
 
-<h3>Prerequisites</h3>
+<hr />
+
+<h2>Prerequisites</h2>
 
 <p>You need a (free) <a href="http://github.com">GitHub</a> account and software.  For Windows, download <a href="https://git-for-windows.github.io">Git for Windows</a>. Mac user can download <a href="https://desktop.github.com">GitHub Desktop</a> and select &ldquo;Install Command Line Tools&rdquo; under Preferences/Advanced or using a repository like macports.</p>
 
@@ -42,9 +44,11 @@ This includes content in the <a href="CODATA-RDA/">CODATA-RDA</a> folder.</p>
 
 <p>Installation instructions are available for Mac OS X, Windows 10, Ubuntu/Linux and Raspbian/Linux operating systems.</p>
 
-<h3>Fork the repository</h3>
+<h2>Fork the repository</h2>
 
 <p>Go to the repository <a href="https://github.com/caltechlibrary/AuthorCarpentry">GitHub page</a> and click to fork button in the upper right corner.  This will create a copy of the repository in your personal account.  You can now feel free to make any changes and they won&rsquo;t impact the main copy.</p>
+
+<hr />
 
 <h2>Working on the repository</h2>
 
@@ -67,6 +71,8 @@ This includes content in the <a href="CODATA-RDA/">CODATA-RDA</a> folder.</p>
 <li>and you&rsquo;re ready to work - start in next section</li>
 </ul>
 
+<hr />
+
 <h2>On going work</h2>
 
 <p>Once you have your repositories cloned on going authoring is a little easier.</p>
@@ -75,16 +81,18 @@ This includes content in the <a href="CODATA-RDA/">CODATA-RDA</a> folder.</p>
 <li>edit markdown (.md) files in a text editor</li>
 <li>run  <code>./mk-website.bash</code>.  This will generate .html files
 You can check the .html files by doing a &ldquo;file open&rdquo; from your web browser on the individual HTML files</li>
-<li>run <code>./publish.bash</code>.  You might have to enter your github password or confirm a merge.  Typing the following should work in most cases.</li>
+<li>run <code>./publish.bash</code>.  You might have to enter your github password or confirm a merge.  Typing &lsquo;:wq&rsquo; should be sufficient to confirm a merge in most cases.</li>
 </ul>
 
-<pre><code class="language-shell">    :wq
-</code></pre>
+<p>This copies updates the contents of the <em>gh-pages</em> branch based on the current <em>master</em> branch.</p>
 
-<p>This copies updates the contents of the <em>gh-pages</em> branch based on the current <em>master</em> branch.
-+ You can put .md files into directories and <code>mk-website.bash</code> will find them.</p>
+<ul>
+<li>You can put .md files into directories and <code>mk-website.bash</code> will find them.<br /></li>
+</ul>
 
 <p>View your new web site at https://<em>your_github_username</em>.github.io/AuthorCarpentry/</p>
+
+<hr />
 
 <h2>Updating with new changes from the library</h2>
 
@@ -94,6 +102,8 @@ You can check the .html files by doing a &ldquo;file open&rdquo; from your web b
 
 <pre><code class="language-shell">    git pull origin master
 </code></pre>
+
+<hr />
 
 <h2>Don&rsquo;t have an internet connection or want to view your changes privately?</h2>
 
@@ -106,6 +116,8 @@ You can check the .html files by doing a &ldquo;file open&rdquo; from your web b
 <li><a href="https://caltechlibrary.github.io/ws/install.html">installation instructions</a></li>
 </ul></li>
 </ul>
+
+<hr />
 
 <h2>Sharing your changes with the world</h2>
 
