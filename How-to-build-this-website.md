@@ -7,7 +7,9 @@ This includes content in the [CODATA-RDA](CODATA-RDA/) folder.
 
 ## One time setup
 
-### Prerequisites
+---
+
+## Prerequisites
 
 You need a (free) [GitHub] (http://github.com) account and software.  For Windows, download [Git for Windows] (https://git-for-windows.github.io). Mac user can download [GitHub Desktop] (https://desktop.github.com) and select "Install Command Line Tools" under Preferences/Advanced or using a repository like macports.  
 
@@ -18,9 +20,11 @@ This website is built using several command line tools developed at Caltech. The
 
 Installation instructions are available for Mac OS X, Windows 10, Ubuntu/Linux and Raspbian/Linux operating systems.
 
-### Fork the repository
+## Fork the repository
 
 Go to the repository [GitHub page] (https://github.com/caltechlibrary/AuthorCarpentry) and click to fork button in the upper right corner.  This will create a copy of the repository in your personal account.  You can now feel free to make any changes and they won't impact the main copy.
+
+---
 
 ## Working on the repository
 
@@ -38,6 +42,8 @@ Go to the repository [GitHub page] (https://github.com/caltechlibrary/AuthorCarp
 ```
 + and you're ready to work - start in next section
 
+---
+
 ## On going work
 
 Once you have your repositories cloned on going authoring is a little easier. 
@@ -45,16 +51,15 @@ Once you have your repositories cloned on going authoring is a little easier.
 + edit markdown (.md) files in a text editor
 + run  `./mk-website.bash`.  This will generate .html files
 You can check the .html files by doing a "file open" from your web browser on the individual HTML files
-+ run `./publish.bash`.  You might have to enter your github password or confirm a merge.  Typing the following should work in most cases.
-
-```shell
-    :wq
-```
++ run `./publish.bash`.  You might have to enter your github password or confirm a merge.  Typing ':wq' should be sufficient to confirm a merge in most cases.
 
 This copies updates the contents of the *gh-pages* branch based on the current *master* branch.
+
 + You can put .md files into directories and `mk-website.bash` will find them.  
 
 View your new web site at https://*your_github_username*.github.io/AuthorCarpentry/ 
+
+---
 
 ## Updating with new changes from the library
 
@@ -66,12 +71,16 @@ To update the copy on your local machine, type in your local terminal in the Aut
     git pull origin master
 ```
 
+---
+
 ## Don't have an internet connection or want to view your changes privately?
 
 You can use Robert's simple web server ws.  Follow the installation instructions below.
 
 + [ws](https://caltechlibrary.github.io/ws) - (optional) is a static web server you can use to view your site while you're writing it
     + [installation instructions](https://caltechlibrary.github.io/ws/install.html)
+
+---
 
 ## Sharing your changes with the world
 
