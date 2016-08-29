@@ -94,6 +94,7 @@ You can use Robert's simple web server ws.  Follow the installation instructions
 ## Sharing your changes with the world
 
 If you want to include your changes in the main AuthorCarpentry repository from https://github.com/caltechlibrary/AuthorCarpentry, you can submit a pull request.  
+
 + Go to your personal github page https://github.com/*your_github_username*/AuthorCarpentry and click the "New Pull Request" button.  You're requesting the changes to be put into in the base branch (the place you want the changes applied - in this case caltechlibrary) from the compare head branch (where the changes are - your personal repository).  You'll see all the changed files in the boxes below.  
 + Write a title and description of the changes and click "Submit Pull Request".  This request will be recorded and a library staff member can authorize the changes.
 
