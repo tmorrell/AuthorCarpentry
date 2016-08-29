@@ -79,9 +79,13 @@ This includes content in the <a href="CODATA-RDA/">CODATA-RDA</a> folder.</p>
 
 <ul>
 <li>edit markdown (.md) files in a text editor</li>
-<li>run  <code>./mk-website.bash</code>.  This will generate .html files
-You can check the .html files by doing a &ldquo;file open&rdquo; from your web browser on the individual HTML files</li>
-<li>run <code>./publish.bash</code>.  You might have to enter your github password or confirm a merge.  Typing &lsquo;:wq&rsquo; should be sufficient to confirm a merge in most cases.</li>
+<li>run  <code>./mk-website.bash</code>.  This will generate .html files</li>
+</ul>
+
+<p>You can check the .html files by doing a &ldquo;file open&rdquo; from your web browser on the individual HTML files</p>
+
+<ul>
+<li>run <code>./publish.bash</code>.  You might have to enter your github password or confirm a merge.  Typing <code>:wq</code> should be sufficient to confirm a merge in most cases.</li>
 </ul>
 
 <p>This copies updates the contents of the <em>gh-pages</em> branch based on the current <em>master</em> branch.</p>
@@ -96,7 +100,16 @@ You can check the .html files by doing a &ldquo;file open&rdquo; from your web b
 
 <h2>Updating with new changes from the library</h2>
 
-<p>When the library makes changes to the repository, you may want to update your personal copy.  Go to <a href="https://github.com/*your_github_username*/AuthorCarpentry">https://github.com/*your_github_username*/AuthorCarpentry</a> and click &ldquo;New Pull Request&rdquo;.  Then select the &ldquo;compare across forks&rdquo; link in the upper left.  You&rsquo;ll want to set the base fork as <em>your_github_username</em>/AuthorCarpentry (what we&rsquo;re updating) and the head fork as caltechlibrary/AuthorCarpentry (where we&rsquo;re getting the changes from).  Click &ldquo;Create pull request&rdquo; two times to submit the request.  Then you&rsquo;ll have to accept the pull request by clicking the green button twice again.  The only place you&rsquo;ll run into problems is if files are in conflict between the two versions-in this case you&rsquo;ll have to manually inspect and resolve the confilict.</p>
+<p>When the library makes changes to the repository, you may want to update your personal copy.</p>
+
+<ul>
+<li>Go to <a href="https://github.com/*your_github_username*/AuthorCarpentry">https://github.com/*your_github_username*/AuthorCarpentry</a> and click &ldquo;New Pull Request&rdquo;.<br /></li>
+<li>Select the &ldquo;compare across forks&rdquo; link in the upper left.  You&rsquo;ll want to set the base fork as <em>your_github_username</em>/AuthorCarpentry (what we&rsquo;re updating) and the head fork as caltechlibrary/AuthorCarpentry (where we&rsquo;re getting the changes from).<br /></li>
+<li>Click &ldquo;Create pull request&rdquo; two times to submit the request.<br /></li>
+<li>Accept the pull request by clicking the green button twice again.<br /></li>
+</ul>
+
+<p>The only place you&rsquo;ll run into problems is if files are in conflict between the two versions-in this case you&rsquo;ll have to manually inspect and resolve the confilict.</p>
 
 <p>To update the copy on your local machine, type in your local terminal in the AuthorCarpentry directory</p>
 
@@ -121,7 +134,9 @@ You can check the .html files by doing a &ldquo;file open&rdquo; from your web b
 
 <h2>Sharing your changes with the world</h2>
 
-<p>If you want to include your changes in the main AuthorCarpentry repository from <a href="https://github.com/caltechlibrary/AuthorCarpentry">https://github.com/caltechlibrary/AuthorCarpentry</a>, you can submit a pull request.  Go to your personal github page <a href="https://github.com/*your_github_username*/AuthorCarpentry">https://github.com/*your_github_username*/AuthorCarpentry</a> and click the &ldquo;New Pull Request&rdquo; button.  You&rsquo;re requesting the changes to be put into in the base branch (the place you want the changes applied - in this case caltechlibrary) from the compare head branch (where the changes are - your personal repository).  You&rsquo;ll see all the changed files in the boxes below.  Write a title and description of the changes and click &ldquo;Submit Pull Request&rdquo;.  This request will be recorded and a library staff member can authorize the changes.</p>
+<p>If you want to include your changes in the main AuthorCarpentry repository from <a href="https://github.com/caltechlibrary/AuthorCarpentry">https://github.com/caltechlibrary/AuthorCarpentry</a>, you can submit a pull request.<br />
++ Go to your personal github page <a href="https://github.com/*your_github_username*/AuthorCarpentry">https://github.com/*your_github_username*/AuthorCarpentry</a> and click the &ldquo;New Pull Request&rdquo; button.  You&rsquo;re requesting the changes to be put into in the base branch (the place you want the changes applied - in this case caltechlibrary) from the compare head branch (where the changes are - your personal repository).  You&rsquo;ll see all the changed files in the boxes below.<br />
++ Write a title and description of the changes and click &ldquo;Submit Pull Request&rdquo;.  This request will be recorded and a library staff member can authorize the changes.</p>
 
 <hr />
 
