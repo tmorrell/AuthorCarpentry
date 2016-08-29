@@ -45,11 +45,26 @@ Once you have your repositories cloned on going authoring is a little easier.
 + edit markdown (.md) files in a text editor
 + run  `./mk-website.bash`.  This will generate .html files
 You can check the .html files by doing a "file open" from your web browser on the individual HTML files
-+ run `./publish.bash`.  You might have to enter your github password.
++ run `./publish.bash`.  You might have to enter your github password or confirm a merge.  Typing the following should work in most cases.
+
+```shell
+    :wq
+```
+
 This copies updates the contents of the *gh-pages* branch based on the current *master* branch.
-+ You can put .md files into directories and `mk-website.bash` will find them.  However, for the moment you need to copy `css/` and `assets/` into the directory for the site to render properly (we'll hopefully make this automatic in the future)
++ You can put .md files into directories and `mk-website.bash` will find them.  
 
 View your new web site at https://*your_github_username*.github.io/AuthorCarpentry/ 
+
+## Updating with new changes from the library
+
+When the library makes changes to the repository, you may want to update your personal copy.  Go to https://github.com/*your_github_username*/AuthorCarpentry and click "New Pull Request".  Then select the "compare across forks" link in the upper left.  You'll want to set the base fork as *your_github_username*/AuthorCarpentry (what we're updating) and the head fork as caltechlibrary/AuthorCarpentry (where we're getting the changes from).  Click "Create pull request" add some description about merting and click "Create pull request" again.  Then you'll have to accept the pull request by clicking the green button.  The only place you'll run into problems is if files are in conflict between the two versions-in this case you'll have to manually inspect and resolve the confilict.
+
+To update the copy on your local machine, type in your local terminal in the AuthorCarpentry directory
+
+```shell
+    git pull origin master
+```
 
 ## Don't have an internet connection or want to view your changes privately?
 
