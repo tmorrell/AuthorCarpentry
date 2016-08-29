@@ -14,18 +14,38 @@ function softwareCheck() {
     done
 }
 
+function relDocPath() {
+    # Source is the filename path where you writing the asset link 
+    # (e.g. Holds: <link rel="stylesheet" href="... /css.site.css">)
+    src=$(dirname "$1")
+    # Target is the you need the relative path to (e.g. css/site.css)
+    tgt="$2"
+    while [ "$src" != "" ] && [ "$src" != "." ]; do
+        tgt="../$tgt"
+        src=$(dirname "$src")
+    done
+    echo "$tgt"
+}
+
 function mkPage () {
     title="$1"
     nav="$2"
     content="$3"
-    html="$4"
+    html_fname="$4"
 
-    echo "Rendering $html"
+    csspath=$(relDocPath "$html_fname" "css/site.css")
+    logopath=$(relDocPath "$html_fname" "assets/liblogo.gif")
+    #echo "$html_fname csspath $csspath"
+    #echo "$html_fname logopath $logopath"
+
+    echo "Rendering $html_fname"
     mkpage \
+        "csspath=text:$csspath" \
+        "logopath=text:$logopath" \
         "title=text:$title" \
         "nav=$nav" \
         "content=$content" \
-        page.tmpl > $html
+        page.tmpl > $html_fname
 }
 
 function mkSite() {
